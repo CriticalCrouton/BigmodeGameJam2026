@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 22d601f8931d5be4e80c6dfd9973c907
+guid: 3736fa688040b7047af9731a147b1cc9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2978550199160002394
-    second: PrettyBadRedbeard_0
+      213: 6804384456874998646
+    second: Bank-1.png_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: PrettyBadRedbeard_0
+      name: Bank-1.png_0
       rect:
         serializedVersion: 2
-        x: 127
-        y: 0
-        width: 770
-        height: 993
+        x: 59
+        y: 209
+        width: 1532
+        height: 1442
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a57d99600afe55920800000000000000
-      internalID: 2978550199160002394
+      spriteID: 67b3933cc970e6e50800000000000000
+      internalID: 6804384456874998646
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      PrettyBadRedbeard_0: 2978550199160002394
+      Bank-1.png_0: 6804384456874998646
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
