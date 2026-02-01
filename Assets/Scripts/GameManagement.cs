@@ -18,6 +18,9 @@ public class GameManagement : MonoBehaviour
     [SerializeField]
     PirateShipTest playerObject; //The player
 
+    [SerializeField]
+    CannonFire cannons; //The cannons
+
     private SpriteRenderer playerVisual;
 
     [SerializeField]
@@ -34,9 +37,6 @@ public class GameManagement : MonoBehaviour
 
     [SerializeField]
     Button shopButton; //The button for going to the shop.
-
-    [SerializeField]
-    Button backFromShopButton; //The button for going back into the game from the shop.
 
     [SerializeField]
     Canvas shopCanvas; //Canvas containing shop ui
@@ -80,7 +80,6 @@ public class GameManagement : MonoBehaviour
                     restartUI.enabled = false;
                     restartButton.gameObject.SetActive(false);
                     shopButton.gameObject.SetActive(false);
-                    backFromShopButton.gameObject.SetActive(false);
                     shopCanvas.gameObject.SetActive(false);
                     break;
             }
@@ -104,9 +103,10 @@ public class GameManagement : MonoBehaviour
         playerVisual.enabled = true;
         playerObject.Launched = false;
         restartUI.enabled = false;
-        restartButton.enabled = false;
         launchUI.enabled = true;
+        restartButton.gameObject.SetActive(false);
         shopCanvas.gameObject.SetActive(false);
+        cannons.ResetCannons();
 
         foreach (BuildingDestruction destructible in destructibles)
         {
@@ -125,7 +125,6 @@ public class GameManagement : MonoBehaviour
         restartUI.enabled = false;
         restartButton.gameObject.SetActive(false);
         shopButton.gameObject.SetActive(false);
-        backFromShopButton.gameObject.SetActive(true);
 
         //Enabling of all of the shop buttons. (likely a public method of a shop script)
         shopCanvas.gameObject.SetActive(true);

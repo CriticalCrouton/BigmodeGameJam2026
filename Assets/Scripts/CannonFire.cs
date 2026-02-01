@@ -26,6 +26,11 @@ public class CannonFire : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        cannonballUI.text = "    : " + cannonballs;
+    }
+
+    public void ResetCannons()
+    {
+        cannonballs = startingCannonballs;
     }
 }
