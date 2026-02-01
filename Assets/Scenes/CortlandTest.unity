@@ -1055,7 +1055,7 @@ RectTransform:
   - {fileID: 1469821288}
   - {fileID: 820413800}
   - {fileID: 1160453478}
-  m_Father: {fileID: 1308357111}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -3011,10 +3011,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 70b1b70d004309c4d8f94ddc73a3003e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CannonBuildingDestruction
-  ship: {fileID: 2016495176}
-  cannons: {fileID: 2016495179}
   explosion: {fileID: 288178582856079442, guid: 72064ecbb7a94af49a0375fadd7fb9e7, type: 3}
-  collisionZone: {fileID: 1180143284}
   moneyValue: 150
   velocityGain: 10
 --- !u!1 &1216817343
@@ -3499,11 +3496,10 @@ Transform:
   m_GameObject: {fileID: 1308357108}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.41, y: 6.328768, z: -12.413878}
+  m_LocalPosition: {x: -2.04, y: 6.328768, z: -12.413878}
   m_LocalScale: {x: 1.2413878, y: 1.2413878, z: 1.2413878}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 468364099}
+  m_Children: []
   m_Father: {fileID: 2016495175}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1308357112
@@ -4335,9 +4331,9 @@ MonoBehaviour:
   playerObject: {fileID: 2016495176}
   cannons: {fileID: 2016495179}
   destructibles:
-  - {fileID: 605852827}
-  - {fileID: 1587854261}
-  - {fileID: 1075051331}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   launchUI: {fileID: 816515438}
   restartUI: {fileID: 1296577349}
   restartButton: {fileID: 1869780007}
@@ -6042,6 +6038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CannonFire
   cannonballUI: {fileID: 961495106}
+  cannonballPrefab: {fileID: 4862299139352973928, guid: 32d9f9997d6d23d4f8e90d8197569446, type: 3}
   cannonballFireAnimation: {fileID: 1533956870137673997, guid: 29dfd53018b718747a3a2d3e936d4e3b, type: 3}
   startingCannonballs: 4
 --- !u!1 &2064219359
@@ -6330,3 +6327,4 @@ SceneRoots:
   - {fileID: 1934852422}
   - {fileID: 451169964}
   - {fileID: 1480291288}
+  - {fileID: 468364099}

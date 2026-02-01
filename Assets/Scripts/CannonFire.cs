@@ -8,6 +8,9 @@ public class CannonFire : MonoBehaviour
     TextMeshProUGUI cannonballUI;
 
     [SerializeField]
+    GameObject cannonballPrefab;
+
+    [SerializeField]
     GameObject cannonballFireAnimation;
 
     [SerializeField]
@@ -27,6 +30,16 @@ public class CannonFire : MonoBehaviour
     void Update()
     {
         cannonballUI.text = "    : " + cannonballs;
+        if (Input.GetKeyDown(KeyCode.Return) && cannonballs > 0)
+        {
+            cannonballs--;
+            GameObject fire = Instantiate(cannonballFireAnimation, gameObject.transform.position, cannonballFireAnimation.gameObject.transform.rotation);
+            fire.transform.SetParent(PirateShipTest.Instance.gameObject.transform);
+            GameObject cannonball = Instantiate(cannonballPrefab, gameObject.transform.position, gameObject.transform.rotation);
+            cannonball.transform.SetParent(PirateShipTest.Instance.gameObject.transform);
+            Cannonball cannonballScript = cannonball.GetComponent<Cannonball>();
+            cannonballScript.Launch();
+        }
     }
 
     public void ResetCannons()

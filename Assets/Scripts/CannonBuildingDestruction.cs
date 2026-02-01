@@ -4,17 +4,9 @@ using UnityEngine.InputSystem;
 
 public class CannonBuildingDestruction : MonoBehaviour
 {
-    [SerializeField]
-    PirateShipTest ship;
-
-    [SerializeField]
-    CannonFire cannons;
 
     [SerializeField]
     GameObject explosion;
-
-    [SerializeField]
-    Collider2D collisionZone;
 
     [SerializeField]
     int moneyValue;
@@ -22,7 +14,9 @@ public class CannonBuildingDestruction : MonoBehaviour
     [SerializeField]
     float velocityGain;
 
-    public Collider2D CollisionZone { get { return collisionZone; } }
+    public GameObject Explosion { get { return explosion; } }
+    public int MoneyValue { get { return moneyValue; } }
+    public float VelocityGain { get { return velocityGain; } }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -33,29 +27,30 @@ public class CannonBuildingDestruction : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
     }
 
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        Time.timeScale = 0.1f;
-    }
-
-    //This should work... but it doesn't!!!! It literally doesn't at all I don't get it.
-    private void OnTriggerStay2D(Collider2D collision)
-    {
-        Console.WriteLine("CannonDestructible");
-        if (Input.GetKeyDown(KeyCode.Return) && cannons.Cannonballs > 0)
+        if (collision.gameObject.layer == LayerMask.NameToLayer("PirateShip"))
         {
-            cannons.Cannonballs--;
-            Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
-            ship.Velocity += velocityGain; //Destroying a ship with a cannonball makes you speed up.
-            ship.Money += moneyValue;
+            Time.timeScale = 0.25f;
+        }
+        if (collision.gameObject.layer == LayerMask.NameToLayer("Cannonball"))
+        {
+            Instantiate(Explosion, gameObject.transform.position, gameObject.transform.rotation);
+            PirateShipTest.Instance.Money += moneyValue;
+            PirateShipTest.Instance.Velocity += velocityGain;
+
         }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        Time.timeScale = 1f;
+        if (collision.gameObject.layer == LayerMask.NameToLayer("PirateShip"))
+        {
+            Time.timeScale = 1f;
+        }
     }
 }

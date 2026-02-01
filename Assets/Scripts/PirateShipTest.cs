@@ -22,6 +22,20 @@ public class PirateShipTest : MonoBehaviour
     public int Money { get { return money; } set { money = value; } }
     public bool Launched { get { return launched; } set { launched = value; } }
 
+    public static PirateShipTest Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance != null && Instance != this)
+        {
+            Destroy(gameObject);
+        }
+        else
+        {
+            Instance = this;
+        }
+    }
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {

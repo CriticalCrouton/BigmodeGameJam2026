@@ -24,7 +24,7 @@ public class GameManagement : MonoBehaviour
     private SpriteRenderer playerVisual;
 
     [SerializeField]
-    List<BuildingDestruction> destructibles; //A list of all buildings on the map
+    List<GameObject> destructibles; //A list of all buildings on the map
 
     [SerializeField]
     TextMeshProUGUI launchUI; //Instructive text for launching
@@ -108,9 +108,9 @@ public class GameManagement : MonoBehaviour
         shopCanvas.gameObject.SetActive(false);
         cannons.ResetCannons();
 
-        foreach (BuildingDestruction destructible in destructibles)
+        foreach (GameObject destructible in destructibles)
         {
-            destructible.Explosion.enabled = false;
+            //destructible.Explosion.enabled = false;
         }
     }
 
