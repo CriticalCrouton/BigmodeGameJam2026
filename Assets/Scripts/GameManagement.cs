@@ -38,6 +38,9 @@ public class GameManagement : MonoBehaviour
     [SerializeField]
     Button backFromShopButton; //The button for going back into the game from the shop.
 
+    [SerializeField]
+    Canvas shopCanvas; //Canvas containing shop ui
+
     public static GameManagement Instance { get; private set; }
 
     public GameState GameState { get { return state; } set { state = value; } }
@@ -78,6 +81,7 @@ public class GameManagement : MonoBehaviour
                     restartButton.gameObject.SetActive(false);
                     shopButton.gameObject.SetActive(false);
                     backFromShopButton.gameObject.SetActive(false);
+                    shopCanvas.gameObject.SetActive(false);
                     break;
             }
 
@@ -102,6 +106,7 @@ public class GameManagement : MonoBehaviour
         restartUI.enabled = false;
         restartButton.enabled = false;
         launchUI.enabled = true;
+        shopCanvas.gameObject.SetActive(false);
 
         foreach (BuildingDestruction destructible in destructibles)
         {
@@ -121,7 +126,8 @@ public class GameManagement : MonoBehaviour
         restartButton.gameObject.SetActive(false);
         shopButton.gameObject.SetActive(false);
         backFromShopButton.gameObject.SetActive(true);
-        
+
         //Enabling of all of the shop buttons. (likely a public method of a shop script)
+        shopCanvas.gameObject.SetActive(true);
     }
 }
