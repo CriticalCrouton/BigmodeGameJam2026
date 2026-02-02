@@ -5908,8 +5908,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::CannonFire
   cannonballUI: {fileID: 961495106}
   reloadAnim: {fileID: 579167816}
-  cannonballPrefab: {fileID: 4862299139352973928, guid: 32d9f9997d6d23d4f8e90d8197569446, type: 3}
-  cannonballFireAnimation: {fileID: 1533956870137673997, guid: 29dfd53018b718747a3a2d3e936d4e3b, type: 3}
+  cannonballPrefabs:
+  - {fileID: 4862299139352973928, guid: 32d9f9997d6d23d4f8e90d8197569446, type: 3}
+  - {fileID: 4862299139352973928, guid: d57e2a3da32930046a5abd228e20340c, type: 3}
+  - {fileID: 4862299139352973928, guid: dfc0fa245183f684fb2775d14b062ebc, type: 3}
+  cannonballFireAnimations:
+  - {fileID: 1533956870137673997, guid: 29dfd53018b718747a3a2d3e936d4e3b, type: 3}
+  - {fileID: 4757078609119936871, guid: 37094847d7f67f34585914c6ddc75262, type: 3}
+  - {fileID: 8125641908725630887, guid: 43de6df80e77b5d4cba6c4138c1fcada, type: 3}
   startingCannonballs: 4
 --- !u!1 &2064219359
 GameObject:

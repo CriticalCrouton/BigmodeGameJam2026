@@ -25,7 +25,7 @@ public class CannonBuildingDestruction : MonoBehaviour
             Time.timeScale = 0.25f;
         }
         //If it's a cannonball, spawn an explosion, give money and speed up ship.
-        if (collision.gameObject.layer == LayerMask.NameToLayer("Cannonball"))
+        if (collision.gameObject.layer == LayerMask.NameToLayer("CannonballUp"))
         {
             Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
             PirateShipTest.Instance.Money += moneyValue;
