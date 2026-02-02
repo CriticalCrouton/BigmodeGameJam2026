@@ -2,6 +2,8 @@ using TMPro;
 using UnityEngine;
 using System.Collections.Generic;
 using UnityEngine.UI;
+using NUnit.Framework.Constraints;
+using System.Linq;
 
 public enum GameState
 {
@@ -39,6 +41,10 @@ public class GameManagement : MonoBehaviour
     [SerializeField]
     Canvas shopCanvas; //Canvas containing shop ui
 
+    //Upgrade variables
+
+    public Upgrade[] upgradeList = new Upgrade[5];
+
     //Singleton Instance Property
     public static GameManagement Instance { get; private set; }
 
@@ -62,6 +68,13 @@ public class GameManagement : MonoBehaviour
     private void Start()
     {
         playerVisual = PirateShipTest.Instance.GetComponent<SpriteRenderer>();
+        //Kind of a sloppy way to make this array but this is C#9.0 and apparently
+        //array = [1,2,3,4]; doesn't exist yet????
+        upgradeList[0] = new Upgrade("CannonBallUpgrade");
+        upgradeList[1] = new Upgrade("CannonUpgrade");
+        upgradeList[2] = new Upgrade("OilUpgrade");
+        upgradeList[3] = new Upgrade("SailUpgrade");
+        upgradeList[4] = new Upgrade("ShipUpgrade");
     }
 
 
