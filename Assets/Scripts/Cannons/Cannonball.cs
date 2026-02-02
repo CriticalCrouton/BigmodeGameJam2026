@@ -9,7 +9,7 @@ public class Cannonball : MonoBehaviour
     void Start()
     {
         hitbox = GetComponent<CircleCollider2D>();
-        velocity = 0;
+        velocity = 75;
     }
 
     // Update is called once per frame
@@ -18,11 +18,6 @@ public class Cannonball : MonoBehaviour
         Vector3 newPos = gameObject.transform.position;
         newPos.y += velocity * Time.deltaTime;
         gameObject.transform.position = newPos;
-    }
-
-    public void Launch()
-    {
-        velocity = 100;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
