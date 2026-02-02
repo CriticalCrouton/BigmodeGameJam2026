@@ -2,9 +2,9 @@ using UnityEngine;
 
 public class Cannonball : MonoBehaviour
 {
-    private float velocity;
+    private float velocity; //How fast the cannonball is moving
+    private CircleCollider2D hitbox; //The collider for the cannonball.
 
-    private CircleCollider2D hitbox;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -12,22 +12,11 @@ public class Cannonball : MonoBehaviour
         velocity = 75;
     }
 
-    // Update is called once per frame
+    //Moves the cannonball after it is fired (will need to be changed for multidirectional cannonballs.
     void Update()
     {
         Vector3 newPos = gameObject.transform.position;
         newPos.y += velocity * Time.deltaTime;
         gameObject.transform.position = newPos;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("CannonDestructibleBuilding"))
-        {
-            CannonBuildingDestruction destructionScript = collision.gameObject.GetComponent<CannonBuildingDestruction>();
-            Instantiate(destructionScript.Explosion, destructionScript.gameObject.transform.position, destructionScript.gameObject.transform.rotation);
-            PirateShipTest.Instance.Money += destructionScript.MoneyValue;
-            PirateShipTest.Instance.Velocity += destructionScript.VelocityGain;
-        }
     }
 }

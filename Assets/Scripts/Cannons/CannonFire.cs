@@ -5,27 +5,26 @@ using TMPro;
 public class CannonFire : MonoBehaviour
 {
     [SerializeField]
-    TextMeshProUGUI cannonballUI;
+    TextMeshProUGUI cannonballUI; //The UI text displaying cannonball count
 
     [SerializeField]
-    GameObject reloadAnim;
+    GameObject reloadAnim; //The UI animation that indicates when cannonballs are reloading
 
     [SerializeField]
-    GameObject cannonballPrefab;
+    GameObject cannonballPrefab; //The prefab for cannonball projectiles.
 
     [SerializeField]
-    GameObject cannonballFireAnimation;
+    GameObject cannonballFireAnimation; //The animation for the firing of cannonballs.
 
     [SerializeField]
-    int startingCannonballs;
+    int startingCannonballs; //The number of cannonballs you start a run with
 
-    private float threeSecondTimer;
+    private float threeSecondTimer; //Storage value for three seconds worth of time (reloading)
 
-    private bool trackOfTime;
+    private bool trackOfTime; //Time only matters for reloading, so otherwise it is off
 
-    private int cannonballs;
+    private int cannonballs; //The number of cannonballs you have.
 
-    public int Cannonballs { get { return cannonballs; } set { cannonballs = value; } }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -40,6 +39,7 @@ public class CannonFire : MonoBehaviour
     void Update()
     {
         cannonballUI.text = "    : " + cannonballs;
+        //Cannonballs are fired upwards with [ENTER] (return). This may need adjustment for multi-directional cannonballs.
         if (Input.GetKeyDown(KeyCode.Return) && cannonballs > 0 && threeSecondTimer == 0)
         {
             cannonballs--;
@@ -49,6 +49,8 @@ public class CannonFire : MonoBehaviour
             cannonball.transform.SetParent(PirateShipTest.Instance.gameObject.transform);
             trackOfTime = true;
         }
+
+        //More code can be added here to shoot cannonballs left or right (timer will go into effect either way.
 
         //This enforces a 3-second cooldown between firing cannonballs.
         if (trackOfTime == true)
@@ -64,6 +66,7 @@ public class CannonFire : MonoBehaviour
         }
     }
 
+    //Resets cannonball count (short!)
     public void ResetCannons()
     {
         cannonballs = startingCannonballs;

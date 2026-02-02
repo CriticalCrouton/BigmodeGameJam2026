@@ -2,10 +2,10 @@ using UnityEngine;
 
 public class ExplosionTerminate : MonoBehaviour
 {
-    private float time;
+    private float time; //Elapsed Time
 
     [SerializeField]
-    float existenceTime;
+    float existenceTime; //The amount of time that the explosion should exist for.
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -13,7 +13,8 @@ public class ExplosionTerminate : MonoBehaviour
         time = 0;
     }
 
-    // Update is called once per frame
+    //Destroys the explosion after it has existed for the required amount of time
+    //Existence is pain to an explosion Jerry!
     void Update()
     {
         time += Time.deltaTime;
