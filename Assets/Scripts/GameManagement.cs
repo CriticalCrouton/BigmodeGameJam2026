@@ -63,13 +63,6 @@ public class GameManagement : MonoBehaviour
         {
             Instance = this;
         }
-    }
-
-
-    private void Start()
-    {
-        state = GameState.Prerun;
-        playerVisual = PirateShipTest.Instance.GetComponent<SpriteRenderer>();
         //Kind of a sloppy way to make this array but this is C#9.0 and apparently
         //array = [1,2,3,4]; doesn't exist yet????
         upgradeList[0] = new Upgrade("CannonBallUpgrade");
@@ -77,6 +70,14 @@ public class GameManagement : MonoBehaviour
         upgradeList[2] = new Upgrade("OilUpgrade");
         upgradeList[3] = new Upgrade("SailUpgrade");
         upgradeList[4] = new Upgrade("ShipUpgrade");
+    }
+
+
+    private void Start()
+    {
+        state = GameState.Prerun;
+        playerVisual = PirateShipTest.Instance.GetComponent<SpriteRenderer>();
+        
     }
 
 

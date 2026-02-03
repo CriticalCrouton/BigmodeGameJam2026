@@ -244,7 +244,7 @@ RectTransform:
   - {fileID: 60626859}
   - {fileID: 767970616}
   - {fileID: 1391200249}
-  m_Father: {fileID: 1308357111}
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
@@ -1422,6 +1422,8 @@ MonoBehaviour:
   explosion: {fileID: 235421196}
   moneyValue: 33
   velocityLoss: 3
+  friction: 0
+  explosionBoost: 0
 --- !u!61 &605852828
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1459,7 +1461,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 15.62, y: 8.12}
     newSize: {x: 15.62, y: 8.12}
     adaptiveTilingThreshold: 0.5
@@ -2428,6 +2430,8 @@ MonoBehaviour:
   explosion: {fileID: 2080605676}
   moneyValue: 500
   velocityLoss: 10
+  friction: 0
+  explosionBoost: 0
 --- !u!61 &1075051332
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -2465,7 +2469,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 15.32, y: 14.42}
     newSize: {x: 15.32, y: 14.42}
     adaptiveTilingThreshold: 0.5
@@ -3333,8 +3337,7 @@ Transform:
   m_LocalPosition: {x: -7.41, y: 6.328768, z: -12.413878}
   m_LocalScale: {x: 1.2413878, y: 1.2413878, z: 1.2413878}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 26687127}
+  m_Children: []
   m_Father: {fileID: 2016495175}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1308357112
@@ -4091,7 +4094,7 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
+    pivot: {x: 0.5, y: 0}
     oldSize: {x: 7.22, y: 14.72}
     newSize: {x: 7.22, y: 14.72}
     adaptiveTilingThreshold: 0.5
@@ -4115,6 +4118,8 @@ MonoBehaviour:
   explosion: {fileID: 1972619649}
   moneyValue: 100
   velocityLoss: 5
+  friction: 0
+  explosionBoost: 0
 --- !u!1 &1664949171
 GameObject:
   m_ObjectHideFlags: 0
@@ -5506,6 +5511,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PirateShipTest
   StartingVelocity: 160
   moneyUI: {fileID: 938930300}
+  frictionSources:
+  - 0.95
 --- !u!50 &2016495177
 Rigidbody2D:
   serializedVersion: 5
@@ -6073,5 +6080,6 @@ SceneRoots:
   - {fileID: 1972619651}
   - {fileID: 2080605677}
   - {fileID: 1934852422}
+  - {fileID: 26687127}
   - {fileID: 451169964}
   - {fileID: 1480291288}
