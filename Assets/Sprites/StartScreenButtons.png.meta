@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 814bfbda56288d04f9e69325555bdd97
+guid: e93853a9576b23048bce448671f5e17c
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -515093267153685661
-    second: StartScreen_0
+      213: -37974300399432946
+    second: StartScreenButtons_0
+  - first:
+      213: 1019940212798113156
+    second: StartScreenButtons_1
+  - first:
+      213: 1914018722485849218
+    second: StartScreenButtons_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +119,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: StartScreen_0
+      name: StartScreenButtons_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 1920
-        height: 1080
+        width: 960
+        height: 480
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 363fb1117650ad8f0800000000000000
-      internalID: -515093267153685661
+      spriteID: e0b09123396197ff0800000000000000
+      internalID: -37974300399432946
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartScreenButtons_1
+      rect:
+        serializedVersion: 2
+        x: 960
+        y: 0
+        width: 960
+        height: 480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 485c7fb383e872e00800000000000000
+      internalID: 1019940212798113156
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: StartScreenButtons_2
+      rect:
+        serializedVersion: 2
+        x: 1920
+        y: 0
+        width: 960
+        height: 480
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 28c473f13e5ff8a10800000000000000
+      internalID: 1914018722485849218
       vertices: []
       indices: 
       edges: []
@@ -138,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 41f8f0daa90e7cf4ea36a903fa9faa12
     internalID: 0
     vertices: []
     indices: 
@@ -146,9 +196,13 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":3.0,"y":1.0},"gridSpriteSize":{"x":960.0,"y":480.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      StartScreen_0: -515093267153685661
+      StartScreenButtons_0: -37974300399432946
+      StartScreenButtons_1: 1019940212798113156
+      StartScreenButtons_2: 1914018722485849218
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

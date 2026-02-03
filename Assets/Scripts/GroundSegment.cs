@@ -29,6 +29,6 @@ public class GroundSegment : MonoBehaviour
             0f
         );
 
-        Instantiate(prefab, spawnPosition, Quaternion.identity, transform);
+        Instantiate(prefab, spawnPosition, Quaternion.identity);//, transform); This prevents the buildings from being heinously wide
     }
 }

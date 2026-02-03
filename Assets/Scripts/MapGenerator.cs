@@ -25,6 +25,7 @@ public class MapGenerator : MonoBehaviour
 
     void Start()
     {
+        player = PirateShipTest.Instance.transform;
         for (int i = 0; i < segmentsAhead; i++)
             SpawnSegment();
     }

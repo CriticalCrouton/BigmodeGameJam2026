@@ -23,6 +23,10 @@ public class Building : MonoBehaviour
             PirateShipTest.Instance.Money += moneyValue;
             PirateShipTest.Instance.Velocity -= velocityLoss;
             PirateShipTest.Instance.AddFrictionSource(friction); //Adds a temporary friction source to the ship
+
+            //Because the system works off of friction now, the boat gets REALLY bogged down during slow motion.
+            //Mayhaps we need to use Time.fixedTimeScale? Or make the time scale faster?
+
             Time.timeScale = 0.1f;
         }
     }

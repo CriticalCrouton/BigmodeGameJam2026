@@ -8,6 +8,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/IrreplaceablyAwesomeScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
+  - enabled: 1
+    path: Assets/Scenes/CortlandStartTest.unity
+    guid: bdcd301aa8bdbb64b8df66e361e90041
+  - enabled: 1
+    path: Assets/Scenes/CortlandTest.unity
+    guid: bdd38fb64abd0754eb40d426ba2e7c6e
+  - enabled: 1
+    path: Assets/Scenes/JoshGenerationTest.unity
+    guid: 3ce28c7bed2d69f47aad9d776643bb9b
+  - enabled: 1
+    path: Assets/Scenes/MichaelTest.unity
+    guid: a97b3382df5b4fa4c9efe57eb5c6f8ff
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

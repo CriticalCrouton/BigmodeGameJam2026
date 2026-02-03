@@ -87,7 +87,7 @@ public class PirateShipTest : MonoBehaviour
             newPos.x += velocity * Time.deltaTime;
             if (velocity > 0)
             {
-                velocity *= shipFriction; //Temp value; can be changed with impunity.
+                velocity *= shipFriction; 
                 Debug.Log("Velocity: " + velocity + " Friction: " + shipFriction);
             }
             if (velocity < 0)
