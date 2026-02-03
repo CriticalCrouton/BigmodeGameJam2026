@@ -84,6 +84,7 @@ public class GameManagement : MonoBehaviour
     // Update is called once per frame
     void Update()
 {
+    Debug.Log("Current Game State: " + state.ToString());
     switch (state)
     {
         case GameState.Prerun:
@@ -150,10 +151,12 @@ void HandleShop()
     //When the button is clicked, the game will restart.
     public void Restart()
     {
-        state = GameState.Prerun;
+        
 
         //Resets the pirate ship to it's starting position.
         PirateShipTest.Instance.gameObject.transform.position = new Vector3(-2.54f, -3.05f, 0);
+        MapGenerator.Instance.Reset();
+        PirateShipTest.Instance.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
         playerVisual.enabled = true;
         PirateShipTest.Instance.Launched = false;
         restartUI.enabled = false;
@@ -162,7 +165,7 @@ void HandleShop()
         shopCanvas.gameObject.SetActive(false);
         cannons.ResetCannons();
 
-        MapGenerator.Instance.Reset();
+        state = GameState.Prerun;
 
         /* Unnecessary right now
         foreach (GameObject destructible in destructibles)

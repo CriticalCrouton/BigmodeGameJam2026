@@ -2,6 +2,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Mathematics;
 
 public class CannonFire : MonoBehaviour
 {
@@ -12,26 +13,54 @@ public class CannonFire : MonoBehaviour
     GameObject reloadAnim; //The UI animation that indicates when cannonballs are reloading
 
     [SerializeField]
-    List<GameObject> cannonballPrefabs; //The prefab for cannonball projectiles.
+    GameObject cannonballPrefab; //The prefab for cannonball projectiles.
 
     [SerializeField]
-    List<GameObject> cannonballFireAnimations; //The animation for the firing of cannonballs.
+    GameObject cannonballFireAnimation; //The animation for the firing of cannonballs.
 
     [SerializeField]
     int startingCannonballs; //The number of cannonballs you start a run with
 
-    private float threeSecondTimer; //Storage value for three seconds worth of time (reloading)
+    private float reloadTimer; //Storage value for three seconds worth of time (reloading)
 
     private bool trackOfTime; //Time only matters for reloading, so otherwise it is off
 
     private int cannonballs; //The number of cannonballs you have.
+
+    public float reloadTime = 3.0f; //Time it takes to reload a cannonball
+
+    private bool anyArrowPressed()
+    {
+        return Keyboard.current.upArrowKey.isPressed ||
+               Keyboard.current.downArrowKey.isPressed ||
+               Keyboard.current.leftArrowKey.isPressed ||
+               Keyboard.current.rightArrowKey.isPressed;
+    }
+
+    private Vector2 inputDirection
+    {
+        get
+        {
+            prevInputDirection = Input.GetKeyDown(KeyCode.UpArrow) ? Vector2.up :
+                         Input.GetKeyDown(KeyCode.LeftArrow) ? Vector2.left :
+                         Input.GetKeyDown(KeyCode.RightArrow) ? Vector2.right :
+                         Input.GetKeyDown(KeyCode.DownArrow) ? Vector2.down :
+                         prevInputDirection;
+            return prevInputDirection;
+        }
+    }
+
+    private Vector2 prevInputDirection = Vector2.up;
+
+    [SerializeField]
+    private float fireOffset = 2.0f; //Distance from ship center to spawn cannonball
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         cannonballs = startingCannonballs;
-        threeSecondTimer = 0;
+        reloadTimer = 0;
         trackOfTime = false;
         reloadAnim.SetActive(false);
     }
@@ -40,47 +69,74 @@ public class CannonFire : MonoBehaviour
     void Update()
     {
         cannonballUI.text = "    : " + cannonballs;
-        //Cannonballs are fired upwards with [UP]. This may need adjustment for multi-directional cannonballs.
-        if (Input.GetKeyDown(KeyCode.UpArrow) && cannonballs > 0 && threeSecondTimer == 0)
+        /*
+            //Cannonballs are fired upwards with [UP]. This may need adjustment for multi-directional cannonballs.
+            if (Input.GetKeyDown(KeyCode.UpArrow) && cannonballs > 0 && threeSecondTimer == 0)
+            {
+                cannonballs--;
+                GameObject fire = Instantiate(cannonballFireAnimations[0], gameObject.transform.position, cannonballFireAnimations[0].gameObject.transform.rotation);
+                fire.transform.SetParent(PirateShipTest.Instance.gameObject.transform);
+                GameObject cannonball = Instantiate(cannonballPrefabs[0], gameObject.transform.position, gameObject.transform.rotation);
+                cannonball.transform.SetParent(PirateShipTest.Instance.gameObject.transform);
+                trackOfTime = true;
+            }
+            //Cannonballs are fired left with [LEFT]
+            else if (Input.GetKeyDown(KeyCode.LeftArrow) && cannonballs > 0 && threeSecondTimer == 0)
+            {
+                cannonballs--;
+                Vector3 pos = new Vector3(gameObject.transform.position.x - 5f, gameObject.transform.position.y - 1f, gameObject.transform.position.z);
+                GameObject fire = Instantiate(cannonballFireAnimations[1], pos, cannonballFireAnimations[1].gameObject.transform.rotation);
+                fire.transform.SetParent(PirateShipTest.Instance.gameObject.transform);
+                GameObject cannonball = Instantiate(cannonballPrefabs[1], pos, gameObject.transform.rotation);
+                cannonball.transform.SetParent(PirateShipTest.Instance.gameObject.transform);
+                trackOfTime = true;
+            }
+            //Cannonballs are fired right with [RIGHT]
+            else if (Input.GetKeyDown(KeyCode.RightArrow) && cannonballs > 0 && threeSecondTimer == 0)
+            {
+                cannonballs--;
+                Vector3 pos = new Vector3(gameObject.transform.position.x + 3f, gameObject.transform.position.y - 1.33f, gameObject.transform.position.z);
+                GameObject fire = Instantiate(cannonballFireAnimations[2], pos, cannonballFireAnimations[2].gameObject.transform.rotation);
+                fire.transform.SetParent(PirateShipTest.Instance.gameObject.transform);
+                GameObject cannonball = Instantiate(cannonballPrefabs[2], pos, gameObject.transform.rotation);
+                cannonball.transform.SetParent(PirateShipTest.Instance.gameObject.transform);
+                trackOfTime = true;
+            }
+        */
+
+        transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.LookRotation(Vector3.forward, inputDirection), 0.4f);
+
+
+        //check for any arrow key press to fire cannonball in that direction
+        if (!trackOfTime && cannonballs > 0 && anyArrowPressed())
         {
-            cannonballs--;
-            GameObject fire = Instantiate(cannonballFireAnimations[0], gameObject.transform.position, cannonballFireAnimations[0].gameObject.transform.rotation);
-            fire.transform.SetParent(PirateShipTest.Instance.gameObject.transform);
-            GameObject cannonball = Instantiate(cannonballPrefabs[0], gameObject.transform.position, gameObject.transform.rotation);
-            cannonball.transform.SetParent(PirateShipTest.Instance.gameObject.transform);
-            trackOfTime = true;
-        }
-        //Cannonballs are fired left with [LEFT]
-        else if (Input.GetKeyDown(KeyCode.LeftArrow) && cannonballs > 0 && threeSecondTimer == 0)
-        {
-            cannonballs--;
-            Vector3 pos = new Vector3(gameObject.transform.position.x - 5f, gameObject.transform.position.y - 1f, gameObject.transform.position.z);
-            GameObject fire = Instantiate(cannonballFireAnimations[1], pos, cannonballFireAnimations[1].gameObject.transform.rotation);
-            fire.transform.SetParent(PirateShipTest.Instance.gameObject.transform);
-            GameObject cannonball = Instantiate(cannonballPrefabs[1], pos, gameObject.transform.rotation);
-            cannonball.transform.SetParent(PirateShipTest.Instance.gameObject.transform);
-            trackOfTime = true;
-        }
-        //Cannonballs are fired right with [RIGHT]
-        else if (Input.GetKeyDown(KeyCode.RightArrow) && cannonballs > 0 && threeSecondTimer == 0)
-        {
-            cannonballs--;
-            Vector3 pos = new Vector3(gameObject.transform.position.x + 3f, gameObject.transform.position.y - 1.33f, gameObject.transform.position.z);
-            GameObject fire = Instantiate(cannonballFireAnimations[2], pos, cannonballFireAnimations[2].gameObject.transform.rotation);
-            fire.transform.SetParent(PirateShipTest.Instance.gameObject.transform);
-            GameObject cannonball = Instantiate(cannonballPrefabs[2], pos, gameObject.transform.rotation);
-            cannonball.transform.SetParent(PirateShipTest.Instance.gameObject.transform);
-            trackOfTime = true;
+            ;
+
+            if (inputDirection != Vector2.zero)
+            {
+                cannonballs--;
+
+                Vector3 pos = gameObject.transform.position + (Vector3)inputDirection * fireOffset;
+                GameObject fire = Instantiate(cannonballFireAnimation, pos, Quaternion.LookRotation(Vector3.forward, inputDirection));
+                // fire.transform.SetParent(gameObject.transform);
+                fire.GetComponent<ParticleSystem>().Play();
+
+                GameObject cannonball = Instantiate(cannonballPrefab, pos, Quaternion.LookRotation(Vector3.forward, inputDirection));
+                // cannonball.transform.SetParent(PirateShipTest.Instance.gameObject.transform);
+
+                trackOfTime = true;
+            }
         }
 
-        //This enforces a 3-second cooldown between firing cannonballs.
+
+        //This enforces a cooldown between firing cannonballs.
         if (trackOfTime == true)
         {
             reloadAnim.SetActive(true);
-            threeSecondTimer += Time.deltaTime;
-            if (threeSecondTimer > 3)
+            reloadTimer += Time.deltaTime;
+            if (reloadTimer > reloadTime)
             {
-                threeSecondTimer = 0;
+                reloadTimer = 0;
                 trackOfTime = false;
                 reloadAnim.SetActive(false);
             }

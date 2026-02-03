@@ -21,13 +21,14 @@ public class Building : MonoBehaviour
         if (collision.gameObject.layer == LayerMask.NameToLayer("PirateShip"))
         {
             PirateShipTest.Instance.Money += moneyValue;
-            PirateShipTest.Instance.Velocity -= velocityLoss;
-            PirateShipTest.Instance.AddFrictionSource(friction); //Adds a temporary friction source to the ship
+            // PirateShipTest.Instance.Velocity -= velocityLoss;
+            PirateShipTest.Instance.AddFrictionSource(gameObject,friction); //Adds a temporary friction source to the ship
 
             //Because the system works off of friction now, the boat gets REALLY bogged down during slow motion.
             //Mayhaps we need to use Time.fixedTimeScale? Or make the time scale faster?
 
-            Time.timeScale = 0.1f;
+            // Time.timeScale = 0.1f;
+            Debug.Log("Entered building trigger");
         }
     }
 
@@ -36,8 +37,9 @@ public class Building : MonoBehaviour
     {
         if (collision.gameObject.layer == LayerMask.NameToLayer("PirateShip"))
         {
+            PirateShipTest.Instance.RemoveFrictionSource(gameObject);
             Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
-            Time.timeScale = 1;
+            // Time.timeScale = 1;
             PirateShipTest.Instance.Velocity += explosionBoost;
             Destroy(gameObject);
         }

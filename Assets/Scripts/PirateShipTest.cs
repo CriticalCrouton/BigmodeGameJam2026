@@ -17,6 +17,8 @@ public class PirateShipTest : MonoBehaviour
 
     private bool launched; //Whether or not you have launched the boat.
 
+    private Dictionary<GameObject, float> frictionSources = new(); //Sources of friction affecting the ship
+
     [SerializeField]
     TextMeshProUGUI moneyUI; //The UI that tells you how much money you have
 
@@ -24,19 +26,21 @@ public class PirateShipTest : MonoBehaviour
     public float Velocity { get { return velocity; } set { velocity = value; } }
     public int Money { get { return money; } set { money = value; } }
     public bool Launched { get { return launched; } set { launched = value; } }
-    public List<float> frictionSources = new List<float> { 0.95f };
+    
     public float shipFriction
     {
         get
         {
             float totalFriction = 1f;
-            foreach (float friction in frictionSources)
+            foreach (float friction in frictionSources.Values)
             {
                 totalFriction *= friction;
             }
             return totalFriction;
         }
     }
+
+    private Rigidbody2D rb;
 
     //Singleton instance property
     public static PirateShipTest Instance { get; private set; }
@@ -60,14 +64,19 @@ public class PirateShipTest : MonoBehaviour
         sinBounce = 0; 
         money = 0;
         launched = false;
+
+        rb = GetComponent<Rigidbody2D>();
+        frictionSources.Add(gameObject, 0.999f); //Base friction
     }
 
     // Update is called once per frame
     void Update()
-    {
-        //reset friction sources
-        frictionSources.Clear();
-        frictionSources.Add(0.999f); //Base friction
+    {        
+        if (GameManagement.Instance.GameState != GameState.Run)
+        {
+            velocity = 0;
+            Debug.Log("Game is not in Run state, ship velocity set to zero. Please.");
+        }
 
         //Boat launch (with space)
         if (Input.GetKeyDown(KeyCode.Space) && launched == false)
@@ -79,22 +88,26 @@ public class PirateShipTest : MonoBehaviour
 
         //Happens every frame
         Vector3 newPos = transform.position;
-        if (launched == false) newPos.y += Mathf.Sin(sinBounce) * Time.deltaTime; 
-
+        if (launched == false) {
+            newPos.y += Mathf.Sin(sinBounce) * Time.deltaTime; 
+            transform.position = newPos;
+        }
         //Once the boat is launched, it will gradually slow down until it is not moving any more.
         if (launched == true)
         {
-            newPos.x += velocity * Time.deltaTime;
+            // newPos.x += velocity * Time.deltaTime;
             if (velocity > 0)
             {
                 velocity *= shipFriction; 
                 Debug.Log("Velocity: " + velocity + " Friction: " + shipFriction);
             }
-            if (velocity < 0)
+            if (velocity < 0.5)
             {
                 velocity = 0;
             }
         }
+
+        rb.linearVelocity = new Vector2(velocity, rb.linearVelocity.y);
         
         //set rotation based on velocity
         float angle = Mathf.Clamp(velocity /10f, 0, 15);
@@ -102,14 +115,26 @@ public class PirateShipTest : MonoBehaviour
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, angle), 0.1f);
 
         sinBounce += 5 * Time.deltaTime; //Multiplying value by Time makes the sin bounce faster.
-        gameObject.transform.position = newPos;
+        
 
         moneyUI.text = "$: " + money;
     }
-
-    public void AddFrictionSource(float friction)
-    {
-        frictionSources.Add(friction);
-    }
     
+    void FixedUpdate()
+    {
+        
+    }
+
+    public void AddFrictionSource(GameObject source, float friction)
+    {
+        frictionSources.Add(source, friction);
+    }
+
+    public void RemoveFrictionSource(GameObject source)
+    {
+        if (frictionSources.ContainsKey(source))
+        {
+            frictionSources.Remove(source);
+        }
+    }
 }

@@ -126,7 +126,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 7.21}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0}
@@ -153,5 +153,5 @@ MonoBehaviour:
   explosion: {fileID: 288178582856079442, guid: 72064ecbb7a94af49a0375fadd7fb9e7, type: 3}
   moneyValue: 500
   velocityLoss: 10
-  friction: 0.9
+  friction: 0.1
   explosionBoost: 20

@@ -10,7 +10,7 @@ public enum CannonballType
 
 public class Cannonball : MonoBehaviour
 {
-    private float velocity; //How fast the cannonball is moving
+    [SerializeField] private float velocity = 75f; //How fast the cannonball is moving
     private CircleCollider2D hitbox; //The collider for the cannonball.
 
     private float elapsedTime; //Cannonballs destroy themselves after five seconds.
@@ -22,7 +22,6 @@ public class Cannonball : MonoBehaviour
     void Start()
     {
         hitbox = GetComponent<CircleCollider2D>();
-        velocity = 75;
     }
 
     //Moves the cannonball after it is fired (will need to be changed for multidirectional cannonballs.
@@ -34,23 +33,28 @@ public class Cannonball : MonoBehaviour
             Destroy(gameObject);
         }
 
-        if (type == CannonballType.Up)
-        {
-            Vector3 newPos = gameObject.transform.position;
-            newPos.y += velocity * Time.deltaTime;
-            gameObject.transform.position = newPos;
-        }
-        else if (type == CannonballType.Right)
-        {
-            Vector3 newPos = gameObject.transform.position;
-            newPos.x += velocity * Time.deltaTime;
-            gameObject.transform.position = newPos;
-        }
-        else if (type == CannonballType.Left)
-        {
-            Vector3 newPos = gameObject.transform.position;
-            newPos.x -= velocity * Time.deltaTime;
-            gameObject.transform.position = newPos;
-        }
+        // if (type == CannonballType.Up)
+        // {
+        //     Vector3 newPos = gameObject.transform.position;
+        //     newPos.y += velocity * Time.deltaTime;
+        //     gameObject.transform.position = newPos;
+        // }
+        // else if (type == CannonballType.Right)
+        // {
+        //     Vector3 newPos = gameObject.transform.position;
+        //     newPos.x += velocity * Time.deltaTime;
+        //     gameObject.transform.position = newPos;
+        // }
+        // else if (type == CannonballType.Left)
+        // {
+        //     Vector3 newPos = gameObject.transform.position;
+        //     newPos.x -= velocity * Time.deltaTime;
+        //     gameObject.transform.position = newPos;
+        // }
+
+        //move in direction of transform.right at speed of velocity
+        Vector3 newPos = gameObject.transform.position;
+        newPos += gameObject.transform.up * velocity * Time.deltaTime;
+        gameObject.transform.position = newPos;
     }
 }

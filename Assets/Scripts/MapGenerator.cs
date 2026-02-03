@@ -75,5 +75,8 @@ public class MapGenerator : MonoBehaviour
         }
         activeSegments.Clear();
         nextX = 23f;
+        
+        for (int i = 0; i < segmentsAhead; i++)
+            SpawnSegment();
     }
 }
