@@ -2997,7 +2997,7 @@ MonoBehaviour:
   smoothingRatio: 0
   lockX: 0
   lockY: 1
-  offset: {x: 0, y: 0}
+  offset: {x: 4, y: 0}
 --- !u!1 &1363831728
 GameObject:
   m_ObjectHideFlags: 0
@@ -3536,7 +3536,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 918a46c8665ed3148955d369b58faf9a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ResetGame
-  cannons: {fileID: 0}
+  cannons: {fileID: 2049611689}
   destructibles:
   - {fileID: 0}
   - {fileID: 0}

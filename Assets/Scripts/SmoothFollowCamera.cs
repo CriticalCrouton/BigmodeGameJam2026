@@ -17,7 +17,7 @@ public class SmoothFollowCamera : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    void LateUpdate()
     {
         if (target != null)
         {
@@ -26,7 +26,9 @@ public class SmoothFollowCamera : MonoBehaviour
                             lockY ? transform.position.y : target.position.y + offset.y,
                             initialZ),
                 ref velocity,
-                smoothingRatio);
+                smoothingRatio,
+                float.PositiveInfinity,
+                Time.smoothDeltaTime);
         }
     }
 }

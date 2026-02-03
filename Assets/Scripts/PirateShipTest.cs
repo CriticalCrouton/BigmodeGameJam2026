@@ -11,7 +11,7 @@ public class PirateShipTest : MonoBehaviour
 
     private int money; //How much money the player has
 
-    private float velocity; //How fast the boat is moving
+    private float velocityX; //How fast the boat is moving
 
     private float sinBounce; //Variable controlling the phase of the boat's sinwave y-bounce.
 
@@ -23,10 +23,10 @@ public class PirateShipTest : MonoBehaviour
     TextMeshProUGUI moneyUI; //The UI that tells you how much money you have
 
     //Properties
-    public float Velocity { get { return velocity; } set { velocity = value; } }
+    public float Velocity { get { return velocityX; } set { velocityX = value; } }
     public int Money { get { return money; } set { money = value; } }
     public bool Launched { get { return launched; } set { launched = value; } }
-    
+
     public float shipFriction
     {
         get
@@ -61,7 +61,7 @@ public class PirateShipTest : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        sinBounce = 0; 
+        sinBounce = 0;
         money = 0;
         launched = false;
 
@@ -71,58 +71,58 @@ public class PirateShipTest : MonoBehaviour
 
     // Update is called once per frame
     void Update()
-    {        
+    {
         if (GameManagement.Instance.GameState != GameState.Run)
         {
-            velocity = 0;
-            Debug.Log("Game is not in Run state, ship velocity set to zero. Please.");
+            velocityX = 0;
         }
 
         //Boat launch (with space)
         if (Input.GetKeyDown(KeyCode.Space) && launched == false)
         {
-            velocity = StartingVelocity;
+            velocityX = StartingVelocity;
             launched = true;
             GameManagement.Instance.GameState = GameState.Run;
         }
 
         //Happens every frame
         Vector3 newPos = transform.position;
-        if (launched == false) {
-            newPos.y += Mathf.Sin(sinBounce) * Time.deltaTime; 
+        if (launched == false)
+        {
+            newPos.y += Mathf.Sin(sinBounce) * Time.deltaTime;
             transform.position = newPos;
         }
         //Once the boat is launched, it will gradually slow down until it is not moving any more.
         if (launched == true)
         {
             // newPos.x += velocity * Time.deltaTime;
-            if (velocity > 0)
+            if (velocityX > 0)
             {
-                velocity *= shipFriction; 
-                Debug.Log("Velocity: " + velocity + " Friction: " + shipFriction);
+                velocityX *= shipFriction;
+                Debug.Log("Velocity: " + velocityX + " Friction: " + shipFriction);
             }
-            if (velocity < 0.5)
+            if (velocityX < 0.5)
             {
-                velocity = 0;
+                velocityX = 0;
             }
         }
 
-        rb.linearVelocity = new Vector2(velocity, rb.linearVelocity.y);
         
+
         //set rotation based on velocity
-        float angle = Mathf.Clamp(velocity /10f, 0, 15);
+        float angle = Mathf.Clamp(velocityX / 10f, 0, 15);
         //lerp rotation for smoothness
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, angle), 0.1f);
 
         sinBounce += 5 * Time.deltaTime; //Multiplying value by Time makes the sin bounce faster.
-        
+
 
         moneyUI.text = "$: " + money;
     }
-    
+
     void FixedUpdate()
     {
-        
+        rb.linearVelocity = new Vector2(velocityX, rb.linearVelocity.y);
     }
 
     public void AddFrictionSource(GameObject source, float friction)
