@@ -7,6 +7,7 @@ using System.Linq;
 
 public enum GameState
 {
+    Prerun,
     Run,
     Shop
 }
@@ -67,6 +68,7 @@ public class GameManagement : MonoBehaviour
 
     private void Start()
     {
+        state = GameState.Prerun;
         playerVisual = PirateShipTest.Instance.GetComponent<SpriteRenderer>();
         //Kind of a sloppy way to make this array but this is C#9.0 and apparently
         //array = [1,2,3,4]; doesn't exist yet????
@@ -80,40 +82,74 @@ public class GameManagement : MonoBehaviour
 
     // Update is called once per frame
     void Update()
+{
+    switch (state)
     {
-        if (state == GameState.Run)
-        {
-            //UI differences depending on boat launch status.
-            switch (PirateShipTest.Instance.Launched)
-            {
-                case true:
-                    launchUI.enabled = false;
-                    break;
-                case false:
-                    launchUI.enabled = true;
-                    restartUI.enabled = false;
-                    restartButton.gameObject.SetActive(false);
-                    shopButton.gameObject.SetActive(false);
-                    shopCanvas.gameObject.SetActive(false);
-                    break;
-            }
+        case GameState.Prerun:
+            HandlePreRun();
+            break;
 
-            //Brings UI back up when the boat stops
-            if (PirateShipTest.Instance.Launched == true && PirateShipTest.Instance.transform.position.x == lastFrameXPos)
-            {
-                restartUI.enabled = true;
-                restartButton.gameObject.SetActive(true);
-                shopButton.gameObject.SetActive(true);
-            }
-            lastFrameXPos = PirateShipTest.Instance.transform.position.x;
-        }
-        
+        case GameState.Run:
+            HandleRun();
+            break;
+
+        case GameState.Shop:
+            HandleShop();
+            break;
     }
+}
+
+void HandlePreRun()
+{
+    launchUI.enabled = true;
+    restartUI.enabled = false;
+
+    restartButton.gameObject.SetActive(false);
+    shopButton.gameObject.SetActive(false);
+    shopCanvas.gameObject.SetActive(false);
+
+    // Transition to Run when boat launches
+    if (PirateShipTest.Instance.Launched)
+    {
+        state = GameState.Run;
+    }
+}
+
+void HandleRun()
+{
+    launchUI.enabled = false;
+    restartUI.enabled = false;
+
+    restartButton.gameObject.SetActive(false);
+    shopButton.gameObject.SetActive(false);
+    shopCanvas.gameObject.SetActive(false);
+
+    // Detect stop
+    if (PirateShipTest.Instance.Velocity <= 0.5f)
+    {
+        PirateShipTest.Instance.Velocity = 0;
+        state = GameState.Shop;
+    }
+
+    lastFrameXPos = PirateShipTest.Instance.transform.position.x;
+}
+
+void HandleShop()
+{
+    launchUI.enabled = false;
+    restartUI.enabled = true;
+
+    restartButton.gameObject.SetActive(true);
+    shopButton.gameObject.SetActive(true);
+    shopCanvas.gameObject.SetActive(true);
+}
+
+
 
     //When the button is clicked, the game will restart.
     public void Restart()
     {
-        state = GameState.Run;
+        state = GameState.Prerun;
 
         //Resets the pirate ship to it's starting position.
         PirateShipTest.Instance.gameObject.transform.position = new Vector3(-2.54f, -3.05f, 0);
@@ -124,6 +160,8 @@ public class GameManagement : MonoBehaviour
         restartButton.gameObject.SetActive(false);
         shopCanvas.gameObject.SetActive(false);
         cannons.ResetCannons();
+
+        MapGenerator.Instance.Reset();
 
         /* Unnecessary right now
         foreach (GameObject destructible in destructibles)

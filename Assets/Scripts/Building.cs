@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class BuildingDestruction : MonoBehaviour
+public class Building : MonoBehaviour
 {
     [SerializeField]
     GameObject explosion; //The prefab explosion spawned by destruction
@@ -10,6 +10,9 @@ public class BuildingDestruction : MonoBehaviour
 
     [SerializeField]
     float velocityLoss; //How much crashing through the building will slow you down.
+    [SerializeField] float friction;
+
+    [SerializeField] float explosionBoost;
 
 
     //The money, slowdown, and slow-motion effect happen when you ENTER the building
@@ -19,6 +22,7 @@ public class BuildingDestruction : MonoBehaviour
         {
             PirateShipTest.Instance.Money += moneyValue;
             PirateShipTest.Instance.Velocity -= velocityLoss;
+            PirateShipTest.Instance.AddFrictionSource(friction); //Adds a temporary friction source to the ship
             Time.timeScale = 0.1f;
         }
     }
@@ -30,6 +34,8 @@ public class BuildingDestruction : MonoBehaviour
         {
             Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
             Time.timeScale = 1;
+            PirateShipTest.Instance.Velocity += explosionBoost;
+            Destroy(gameObject);
         }
     }
 }
