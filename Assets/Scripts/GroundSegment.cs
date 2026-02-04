@@ -3,12 +3,7 @@ using System.Collections.Generic;
 using Unity.Mathematics;
 using UnityEngine;
 
-[Serializable]
-public class WeightedRandomItem<T>
-{
-    public T item;
-    public float weight;
-}
+
 
 public class GroundSegment : MonoBehaviour
 {
@@ -125,27 +120,9 @@ public class GroundSegment : MonoBehaviour
     }
 
 
+
     Building getRandomBuilding(List<WeightedRandomItem<Building>> buildingList)
     {
-        float totalWeight = 0f;
-        foreach (WeightedRandomItem<Building> item in buildingList)
-        {
-            totalWeight += item.weight;
-        }
-
-        float randomValue = UnityEngine.Random.Range(0, totalWeight);
-        float cumulativeWeight = 0f;
-
-        foreach (WeightedRandomItem<Building> item in buildingList)
-        {
-            cumulativeWeight += item.weight;
-            if (randomValue <= cumulativeWeight)
-            {
-                return item.item;
-            }
-        }
-
-        return buildingList[buildingList.Count - 1].item; // Fallback
+        return WeightedRandom.getRandomItem(buildingList);
     }
-
 }

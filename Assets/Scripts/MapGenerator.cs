@@ -1,12 +1,15 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+
+
 public class MapGenerator : MonoBehaviour
 {
     public static MapGenerator Instance { get; private set; }
 
     public Transform player;
-    public List<GroundSegment> segmentPrefabs;
+    public List<WeightedRandomItem<GroundSegment>> segmentPrefabs;
+    
     public int segmentsAhead = 3;
     private float nextX = 23f;
     private Queue<GroundSegment> activeSegments = new Queue<GroundSegment>();
@@ -43,8 +46,8 @@ public class MapGenerator : MonoBehaviour
 
     void SpawnSegment()
     {
-        int index = Random.Range(0, segmentPrefabs.Count);
-        GroundSegment segmentToSpawn = segmentPrefabs[index];
+        
+        GroundSegment segmentToSpawn = WeightedRandom.getRandomItem(segmentPrefabs);
 
         GroundSegment newSegment = Instantiate(
             segmentToSpawn,
