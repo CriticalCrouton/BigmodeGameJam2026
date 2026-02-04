@@ -22,7 +22,7 @@ public class GroundSegment : MonoBehaviour
     void Start()
     {
         SpawnRandomBuildingsForeground(UnityEngine.Random.Range(2, 5));
-        // SpawnRandomBuildingsBackground(UnityEngine.Random.Range(2, 5));
+        SpawnRandomBuildingsBackground(UnityEngine.Random.Range(2, 5));
     }
 
     void SpawnRandomBuildingsForeground(int count)
@@ -49,36 +49,75 @@ public class GroundSegment : MonoBehaviour
                                     foregroundBuildingHeight.position.y,
                                     buildingToSpawn.transform.position.z
                                 );
-
-                instance.transform.position = spawnPos;
                 Physics2D.SyncTransforms();
 
-                Collider2D col = instance.GetComponent<Collider2D>();
+                int hits = Physics2D.OverlapBoxAll(
+                                spawnPos,
+                                instance.GetComponent<SpriteRenderer>().bounds.size,
+                                0,
+                                LayerMask.GetMask("DestructableBuilding")
+                ).Length;
 
-                if (col == null)
-                {
-                    Destroy(instance);
-                    break;
-                }
-
-                ContactFilter2D filter = new ContactFilter2D
-                {
-                    useLayerMask = true,
-                    layerMask = LayerMask.GetMask("DestructableBuilding"),
-                    useTriggers = true
-                };
-
-                Collider2D[] results = new Collider2D[1];
-                int hits = col.Overlap(filter, results);
+                // Debug.Log("Spawn attempt " + attempt + " for building " + buildingToSpawn.name + " at " + spawnPos + " resulted in " + (hit ? "a hit" : "no hits"));
 
                 if (hits == 0)
                 {
+                    instance.transform.position = spawnPos;
                     break;
                 }
                 else if (attempt == maxAttempts)
                 {
-                    // Destroy(instance);
-                    instance.GetComponent<SpriteRenderer>().color = Color.red;
+                    Destroy(instance);
+                    // instance.GetComponent<SpriteRenderer>().color = Color.red;
+                    Debug.Log("Failed to place building after max attempts.");
+                }
+            }
+        }
+    }
+    void SpawnRandomBuildingsBackground(int count)
+    {
+        const int maxAttempts = 5;
+
+        for (int i = 0; i < count; i++)
+        {
+            Building buildingToSpawn = getRandomBuilding(possibleBuildingsBackground);
+
+            Building instance = Instantiate(
+                                buildingToSpawn,
+                                Vector3.up * 1000,
+                                Quaternion.identity,
+                                null
+                            );
+            instance.transform.SetParent(transform, true);
+
+            for (int attempt = 1; attempt <= maxAttempts; attempt++)
+            {
+                float xPos = UnityEngine.Random.Range(length / 4f, length - (length / 4f));
+                Vector3 spawnPos = new Vector3(
+                                    transform.position.x + xPos,
+                                    backgroundBuildingHeight.position.y,
+                                    buildingToSpawn.transform.position.z
+                                );
+                Physics2D.SyncTransforms();
+
+                int hits = Physics2D.OverlapBoxAll(
+                                spawnPos,
+                                instance.GetComponent<SpriteRenderer>().bounds.size,
+                                0,
+                                LayerMask.GetMask("CannonDestructableBuilding")
+                ).Length;
+
+                // Debug.Log("Spawn attempt " + attempt + " for building " + buildingToSpawn.name + " at " + spawnPos + " resulted in " + (hit ? "a hit" : "no hits"));
+
+                if (hits == 0)
+                {
+                    instance.transform.position = spawnPos;
+                    break;
+                }
+                else if (attempt == maxAttempts)
+                {
+                    Destroy(instance);
+                    // instance.GetComponent<SpriteRenderer>().color = Color.red;
                     Debug.Log("Failed to place building after max attempts.");
                 }
             }

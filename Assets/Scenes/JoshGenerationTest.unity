@@ -3546,6 +3546,12 @@ MonoBehaviour:
   restartButton: {fileID: 1869780007}
   shopButton: {fileID: 1363831729}
   shopCanvas: {fileID: 468364102}
+  lv0: {fileID: 0}
+  lv1: {fileID: 0}
+  lv2: {fileID: 0}
+  lv3: {fileID: 0}
+  lv4: {fileID: 0}
+  lv5: {fileID: 0}
 --- !u!4 &1664949173
 Transform:
   m_ObjectHideFlags: 0
