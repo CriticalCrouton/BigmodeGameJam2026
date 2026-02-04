@@ -2,7 +2,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class CannonBuildingDestruction : MonoBehaviour
+public class CannonBuilding : MonoBehaviour
 {
 
     [SerializeField]

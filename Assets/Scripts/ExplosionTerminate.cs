@@ -22,5 +22,10 @@ public class ExplosionTerminate : MonoBehaviour
         {
             Destroy(gameObject);
         }
+
+        if (GameManagement.Instance.GameState != GameState.Run)
+        {
+            Destroy(gameObject);
+        }
     }
 }

@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 8920132593150363662}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -1.66, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.49215543, y: 0.49215543, z: 0.49215543}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -153,5 +153,5 @@ MonoBehaviour:
   explosion: {fileID: 288178582856079442, guid: 72064ecbb7a94af49a0375fadd7fb9e7, type: 3}
   moneyValue: 500
   velocityLoss: 10
-  friction: 0.9
+  friction: 0.95
   explosionBoost: 20
