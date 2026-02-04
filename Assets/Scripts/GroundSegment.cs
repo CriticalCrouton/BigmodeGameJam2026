@@ -17,7 +17,7 @@ public class GroundSegment : MonoBehaviour
     void Start()
     {
         SpawnRandomBuildingsForeground(UnityEngine.Random.Range(2, 5));
-        SpawnRandomBuildingsBackground(UnityEngine.Random.Range(2, 5));
+        //SpawnRandomBuildingsBackground(UnityEngine.Random.Range(2, 5));
     }
 
     void SpawnRandomBuildingsForeground(int count)

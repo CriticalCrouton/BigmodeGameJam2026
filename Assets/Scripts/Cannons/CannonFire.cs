@@ -118,11 +118,11 @@ public class CannonFire : MonoBehaviour
 
                 Vector3 pos = gameObject.transform.position + (Vector3)inputDirection * fireOffset;
                 GameObject fire = Instantiate(cannonballFireAnimation, pos, Quaternion.LookRotation(Vector3.forward, inputDirection));
-                // fire.transform.SetParent(gameObject.transform);
+                //fire.transform.SetParent(gameObject.transform);
                 fire.GetComponent<ParticleSystem>().Play();
 
                 GameObject cannonball = Instantiate(cannonballPrefab, pos, Quaternion.LookRotation(Vector3.forward, inputDirection));
-                // cannonball.transform.SetParent(PirateShipTest.Instance.gameObject.transform);
+                //cannonball.transform.SetParent(PirateShipTest.Instance.gameObject.transform);
 
                 trackOfTime = true;
             }

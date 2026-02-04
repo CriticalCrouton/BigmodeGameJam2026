@@ -31,15 +31,6 @@ public class GameManagement : MonoBehaviour
     TextMeshProUGUI launchUI; //Instructive text for launching
 
     [SerializeField]
-    TextMeshProUGUI restartUI; //Instructive text for restarting
-
-    [SerializeField]
-    Button restartButton; //The button for restarting.
-
-    [SerializeField]
-    Button shopButton; //The button for going to the shop.
-
-    [SerializeField]
     Canvas shopCanvas; //Canvas containing shop ui
 
     //Upgrade variables
@@ -131,10 +122,6 @@ public class GameManagement : MonoBehaviour
 void HandlePreRun()
 {
     launchUI.enabled = true;
-    restartUI.enabled = false;
-
-    restartButton.gameObject.SetActive(false);
-    shopButton.gameObject.SetActive(false);
     shopCanvas.gameObject.SetActive(false);
 
     // Transition to Run when boat launches
@@ -147,10 +134,6 @@ void HandlePreRun()
 void HandleRun()
 {
     launchUI.enabled = false;
-    restartUI.enabled = false;
-
-    restartButton.gameObject.SetActive(false);
-    shopButton.gameObject.SetActive(false);
     shopCanvas.gameObject.SetActive(false);
 
     // Detect stop
@@ -166,10 +149,6 @@ void HandleRun()
 void HandleShop()
 {
     launchUI.enabled = false;
-    restartUI.enabled = true;
-
-    restartButton.gameObject.SetActive(true);
-    shopButton.gameObject.SetActive(true);
     shopCanvas.gameObject.SetActive(true);
 }
 
@@ -186,9 +165,7 @@ void HandleShop()
         PirateShipTest.Instance.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
         playerVisual.enabled = true;
         PirateShipTest.Instance.Launched = false;
-        restartUI.enabled = false;
         launchUI.enabled = true;
-        restartButton.gameObject.SetActive(false);
         shopCanvas.gameObject.SetActive(false);
         cannons.ResetCannons();
 
@@ -210,9 +187,6 @@ void HandleShop()
         PirateShipTest.Instance.gameObject.transform.position = new Vector3(-75f, -3.05f, 0);
         playerVisual.enabled = false;
         launchUI.enabled = false;
-        restartUI.enabled = false;
-        restartButton.gameObject.SetActive(false);
-        shopButton.gameObject.SetActive(false);
         shopCanvas.gameObject.SetActive(true);
     }
 }

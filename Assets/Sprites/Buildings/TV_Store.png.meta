@@ -1,0 +1,363 @@
+fileFormatVersion: 2
+guid: c10b9cc03051a194bb646e11861acf4d
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7809799589647212097
+    second: TV_Store_0
+  - first:
+      213: 3010980018488887060
+    second: TV_Store_1
+  - first:
+      213: 6453883203760915974
+    second: TV_Store_2
+  - first:
+      213: -3334064361295347957
+    second: TV_Store_3
+  - first:
+      213: -1623699054101636944
+    second: TV_Store_4
+  - first:
+      213: -7377514279529846671
+    second: TV_Store_5
+  - first:
+      213: 7256384510267808151
+    second: TV_Store_6
+  - first:
+      213: -5169282639854866102
+    second: TV_Store_7
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: TV_Store_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1005
+        width: 1176
+        height: 1008
+      alignment: 9
+      pivot: {x: 0.4952896, y: 0.120797776}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fb1261cb6a40e9390800000000000000
+      internalID: -7809799589647212097
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TV_Store_1
+      rect:
+        serializedVersion: 2
+        x: 1179
+        y: 1008
+        width: 1176
+        height: 1008
+      alignment: 9
+      pivot: {x: 0.4952896, y: 0.11540985}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41744dbbf5629c920800000000000000
+      internalID: 3010980018488887060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TV_Store_2
+      rect:
+        serializedVersion: 2
+        x: 2352
+        y: 1008
+        width: 1176
+        height: 1008
+      alignment: 9
+      pivot: {x: 0.5000004, y: 0.11804962}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6068706649cc09950800000000000000
+      internalID: 6453883203760915974
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TV_Store_3
+      rect:
+        serializedVersion: 2
+        x: 3528
+        y: 1008
+        width: 1176
+        height: 1008
+      alignment: 9
+      pivot: {x: 0.5000004, y: 0.12354533}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b0f73b6c0260bb1d0800000000000000
+      internalID: -3334064361295347957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TV_Store_4
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 0
+        width: 1176
+        height: 1008
+      alignment: 9
+      pivot: {x: 0.4952895, y: 0.11804948}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0b8522220567779e0800000000000000
+      internalID: -1623699054101636944
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TV_Store_5
+      rect:
+        serializedVersion: 2
+        x: 1176
+        y: 0
+        width: 1176
+        height: 1008
+      alignment: 9
+      pivot: {x: 0.49764496, y: 0.12079732}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 178604bb9ddcd9990800000000000000
+      internalID: -7377514279529846671
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TV_Store_6
+      rect:
+        serializedVersion: 2
+        x: 2352
+        y: 0
+        width: 1176
+        height: 1008
+      alignment: 9
+      pivot: {x: 0.5023557, y: 0.12354517}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 799d820244bd3b460800000000000000
+      internalID: 7256384510267808151
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TV_Store_7
+      rect:
+        serializedVersion: 2
+        x: 3528
+        y: 0
+        width: 1176
+        height: 1008
+      alignment: 9
+      pivot: {x: 0.5000004, y: 0.12629302}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a417bdbb3d40348b0800000000000000
+      internalID: -5169282639854866102
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: TV_Store_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 432
+        width: 4704
+        height: 1077
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b71d17c46d8826545ae581a7fc657357
+      internalID: 2003623551
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: bbf37f25ec2b32644b3d8a67a7acc5c2
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":2.0},"gridSpriteSize":{"x":1176.0,"y":1008.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+    nameFileIdTable:
+      TV_Store_0: -7809799589647212097
+      TV_Store_1: 3010980018488887060
+      TV_Store_2: 6453883203760915974
+      TV_Store_3: -3334064361295347957
+      TV_Store_4: -1623699054101636944
+      TV_Store_5: -7377514279529846671
+      TV_Store_6: 7256384510267808151
+      TV_Store_7: -5169282639854866102
+      TV_Store_8: 2003623551
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
