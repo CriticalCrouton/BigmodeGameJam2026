@@ -137,12 +137,12 @@ TextureImporter:
       name: TV_Store_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 1005
-        width: 1176
-        height: 1008
-      alignment: 9
-      pivot: {x: 0.4952896, y: 0.120797776}
+        x: 17
+        y: 1110
+        width: 1142
+        height: 867
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -159,12 +159,12 @@ TextureImporter:
       name: TV_Store_1
       rect:
         serializedVersion: 2
-        x: 1179
-        y: 1008
-        width: 1176
-        height: 1008
-      alignment: 9
-      pivot: {x: 0.4952896, y: 0.11540985}
+        x: 1193
+        y: 1110
+        width: 1142
+        height: 867
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -181,12 +181,12 @@ TextureImporter:
       name: TV_Store_2
       rect:
         serializedVersion: 2
-        x: 2352
-        y: 1008
-        width: 1176
-        height: 1008
-      alignment: 9
-      pivot: {x: 0.5000004, y: 0.11804962}
+        x: 2369
+        y: 1110
+        width: 1142
+        height: 867
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -203,12 +203,12 @@ TextureImporter:
       name: TV_Store_3
       rect:
         serializedVersion: 2
-        x: 3528
-        y: 1008
-        width: 1176
-        height: 1008
-      alignment: 9
-      pivot: {x: 0.5000004, y: 0.12354533}
+        x: 3545
+        y: 1110
+        width: 1142
+        height: 867
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -225,12 +225,12 @@ TextureImporter:
       name: TV_Store_4
       rect:
         serializedVersion: 2
-        x: 3
-        y: 0
-        width: 1176
-        height: 1008
-      alignment: 9
-      pivot: {x: 0.4952895, y: 0.11804948}
+        x: 17
+        y: 102
+        width: 1142
+        height: 867
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -247,12 +247,12 @@ TextureImporter:
       name: TV_Store_5
       rect:
         serializedVersion: 2
-        x: 1176
-        y: 0
-        width: 1176
-        height: 1008
-      alignment: 9
-      pivot: {x: 0.49764496, y: 0.12079732}
+        x: 1193
+        y: 102
+        width: 1142
+        height: 867
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -269,12 +269,12 @@ TextureImporter:
       name: TV_Store_6
       rect:
         serializedVersion: 2
-        x: 2352
-        y: 0
-        width: 1176
-        height: 1008
-      alignment: 9
-      pivot: {x: 0.5023557, y: 0.12354517}
+        x: 2369
+        y: 102
+        width: 1142
+        height: 867
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -291,12 +291,12 @@ TextureImporter:
       name: TV_Store_7
       rect:
         serializedVersion: 2
-        x: 3528
-        y: 0
-        width: 1176
-        height: 1008
-      alignment: 9
-      pivot: {x: 0.5000004, y: 0.12629302}
+        x: 3545
+        y: 102
+        width: 1142
+        height: 867
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -305,28 +305,6 @@ TextureImporter:
       bones: []
       spriteID: a417bdbb3d40348b0800000000000000
       internalID: -5169282639854866102
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: TV_Store_8
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 432
-        width: 4704
-        height: 1077
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: b71d17c46d8826545ae581a7fc657357
-      internalID: 2003623551
       vertices: []
       indices: 
       edges: []
@@ -345,7 +323,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":4.0,"y":2.0},"gridSpriteSize":{"x":1176.0,"y":1008.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
       TV_Store_0: -7809799589647212097
       TV_Store_1: 3010980018488887060
@@ -355,7 +333,6 @@ TextureImporter:
       TV_Store_5: -7377514279529846671
       TV_Store_6: 7256384510267808151
       TV_Store_7: -5169282639854866102
-      TV_Store_8: 2003623551
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
