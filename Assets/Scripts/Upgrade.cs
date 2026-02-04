@@ -3,10 +3,18 @@ using UnityEngine;
 public class Upgrade
 {
     private int level;
-    private float cost; // doesn't necessarily need to be a float but just to be flexible
+    private int cost; // doesn't necessarily need to be a float but just to be flexible
     private string name;
 
-    public float Cost
+
+    public int Level
+    {
+        get
+        {
+            return level;
+        }
+    }
+    public int Cost
     {
         get
         {
@@ -29,16 +37,22 @@ public class Upgrade
         this.name = name;
     }
 
-    public bool LevelUp(float playerMoney)
+    public bool LevelUp()
     {
-        if(playerMoney < cost)
+        if (PirateShipTest.Instance.Money < cost)
         {
+            Debug.Log("Not enough money!");
             return false;
         }
 
-        level++;
+        PirateShipTest.Instance.Money -= cost;
+        if(level <= 5)
+        {
+            level++;
+        }
         cost *= 2;
-        
+
+        Debug.Log("Enough money!");
         return true;
     }
 }

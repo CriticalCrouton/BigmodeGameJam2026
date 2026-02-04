@@ -46,11 +46,31 @@ public class GameManagement : MonoBehaviour
 
     public Upgrade[] upgradeList = new Upgrade[5];
 
+    [SerializeField]
+    Sprite lv0;
+    [SerializeField]
+    Sprite lv1;
+    [SerializeField]
+    Sprite lv2;
+    [SerializeField]
+    Sprite lv3;
+    [SerializeField]
+    Sprite lv4;
+    [SerializeField]
+    Sprite lv5;
+
+    Sprite[] levelBar = new Sprite[6]; //Level up bar spritesheet
+
     //Singleton Instance Property
     public static GameManagement Instance { get; private set; }
 
     //Properties
     public GameState GameState { get { return state; } set { state = value; } }
+
+    public Sprite[] LevelBar
+    {
+        get { return levelBar; }
+    }
 
     //Singleton Setup
     private void Awake()
@@ -70,6 +90,13 @@ public class GameManagement : MonoBehaviour
         upgradeList[2] = new Upgrade("OilUpgrade");
         upgradeList[3] = new Upgrade("SailUpgrade");
         upgradeList[4] = new Upgrade("ShipUpgrade");
+
+        levelBar[0] = lv0;
+        levelBar[1] = lv1;
+        levelBar[2] = lv2;
+        levelBar[3] = lv3;
+        levelBar[4] = lv4;
+        levelBar[5] = lv5;
     }
 
 
@@ -84,7 +111,7 @@ public class GameManagement : MonoBehaviour
     // Update is called once per frame
     void Update()
 {
-    Debug.Log("Current Game State: " + state.ToString());
+    //Debug.Log("Current Game State: " + state.ToString());
     switch (state)
     {
         case GameState.Prerun:

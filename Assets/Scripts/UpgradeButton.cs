@@ -1,6 +1,7 @@
 using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.UI;
 
 
 public class UpgradeButton : MonoBehaviour
@@ -9,18 +10,20 @@ public class UpgradeButton : MonoBehaviour
     [SerializeField]
     TextMeshProUGUI costText;
 
-    [SerializeField]
     GameManagement manager;
+
+    Sprite[] lvBar;
+
+    [SerializeField]
+    Image levelBarImg;
 
     Upgrade currentUpgrade;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        if (manager.upgradeList[0] == null)
-        {
-            Debug.Log("where did it go?");
-        }
+        manager = GameManagement.Instance;
+
         foreach (Upgrade u in manager.upgradeList)
         {
             if (u.Name == this.gameObject.name)
@@ -32,24 +35,27 @@ public class UpgradeButton : MonoBehaviour
         {
             Debug.Log("Error: upgrade not found");
         }
+        lvBar = manager.LevelBar;
     }
     private void Update()
     {
         costText.text = "Cost: $" + currentUpgrade.Cost;
+
+        levelBarImg.sprite = lvBar[currentUpgrade.Level];
     }
 
     public void ButtonPress()
     {
         Debug.Log(currentUpgrade.Name);
-        if (currentUpgrade.LevelUp(PirateShipTest.Instance.Money))
+        if (currentUpgrade.LevelUp())
         {
             // Code to change the level graphic for upgrade icon
-            Debug.Log("Enough money!");
+            
         }
         else
         {
             //Code to show not enough money ui
-            Debug.Log("Not enough money!");
+            
         }
     }
 
