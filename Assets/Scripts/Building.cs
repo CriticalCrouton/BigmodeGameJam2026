@@ -31,6 +31,12 @@ public class Building : MonoBehaviour
             Time.fixedDeltaTime = 0.02f * Time.timeScale;
             Debug.Log("Entered building trigger");
         }
+        if (gameObject.CompareTag("Wall"))
+        {
+            //Check for ship velocity
+            //If velocity meets a threshhold, pass with a large reduction
+            //Otherwise, instantly stop and go to shop.
+        }
     }
 
     //Time returns to normal and the building "explodes" once you LEV
