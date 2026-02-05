@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: a57911681978e69499ec710810a35984
+guid: 5bd255ff09e1a494ebe30f479e9012da
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1740361982046763009
-    second: BigFuckingWall-1.png_0
+      213: -2059823583270753353
+    second: sparkle_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -96,31 +96,18 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
-  - serializedVersion: 4
-    buildTarget: WebGL
-    maxTextureSize: 2048
-    resizeAlgorithm: 0
-    textureFormat: -1
-    textureCompression: 1
-    compressionQuality: 50
-    crunchedCompression: 0
-    allowsAlphaSplitting: 0
-    overridden: 0
-    ignorePlatformSupport: 0
-    androidETC2FallbackOverride: 0
-    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: BigFuckingWall-1.png_0
+      name: sparkle_0
       rect:
         serializedVersion: 2
-        x: 1291
-        y: 74
-        width: 525
-        height: 1727
-      alignment: 6
+        x: 0
+        y: 0
+        width: 11
+        height: 11
+      alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
@@ -128,30 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 108fd787002072810800000000000000
-      internalID: 1740361982046763009
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: BigFuckingWall-1.png_1
-      rect:
-        serializedVersion: 2
-        x: 1184
-        y: 74
-        width: 107
-        height: 1727
-      alignment: 8
-      pivot: {x: 1, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: c5f5bd48208d22f459043ec77b0face5
-      internalID: -1085996720
+      spriteID: 7bbac2b4d590a63e0800000000000000
+      internalID: -2059823583270753353
       vertices: []
       indices: 
       edges: []
@@ -160,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 436d3c60249c5394ca1a9c3b48859a61
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -170,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      BigFuckingWall-1.png_0: 1740361982046763009
-      BigFuckingWall-1.png_1: -1085996720
+      sparkle_0: -2059823583270753353
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

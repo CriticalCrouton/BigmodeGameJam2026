@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8593572797934077264}
   - component: {fileID: 7139295257416490608}
   - component: {fileID: 7446266489799873236}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: StoneStatue_0 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 4
   m_Sprite: {fileID: -4224191113791194064, guid: 32f97775caead2648b76d7a871c03fbe, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8237871767080236564}
   - component: {fileID: 7198989857602847754}
   - component: {fileID: 5827078708291273967}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: ApartmentBuilding_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 4
   m_Sprite: {fileID: -3209933399934813777, guid: ff5dc536a4641004b98f3a439ea1ec53, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0

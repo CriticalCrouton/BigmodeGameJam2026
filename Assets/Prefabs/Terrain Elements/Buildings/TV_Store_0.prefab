@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4078533675689588492}
   - component: {fileID: 6829794495131295356}
   - component: {fileID: 2680089431640477406}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: TV_Store_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -152,8 +152,8 @@ BoxCollider2D:
   m_Offset: {x: 0, y: 4.21375}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.4952896, y: 0.120797776}
-    oldSize: {x: 11.76, y: 10.0832815}
+    pivot: {x: 0.5, y: 0}
+    oldSize: {x: 11.42, y: 8.672822}
     newSize: {x: 11.76, y: 10.0832815}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
