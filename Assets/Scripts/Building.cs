@@ -1,55 +1,127 @@
+using System.Collections;
 using UnityEngine;
+public enum BuildingType
+{
+    Background,
+    Foreground,
+    Wall
+}
+
+
 
 public class Building : MonoBehaviour
 {
     [SerializeField]
-    GameObject explosion; //The prefab explosion spawned by destruction
+    protected GameObject explosion; //The prefab explosion spawned by destruction
 
     [SerializeField]
-    int moneyValue; //How much money the building is worth
+    protected int moneyValue; //How much money the building is worth
 
     [SerializeField]
     float velocityLoss; //How much crashing through the building will slow you down.
     [SerializeField] float friction;
 
-    [SerializeField] float explosionBoost;
+    [SerializeField] protected float explosionBoost;
+
+    [SerializeField] protected BuildingType buildingType;
+
+    private bool currentlyColliding = false;
 
 
     //The money, slowdown, and slow-motion effect happen when you ENTER the building
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("PirateShip"))
-        {
-            PirateShipTest.Instance.Money += moneyValue;
-            // PirateShipTest.Instance.Velocity -= velocityLoss;
-            PirateShipTest.Instance.AddFrictionSource(gameObject,friction); //Adds a temporary friction source to the ship
+        currentlyColliding = true;
 
-            //Because the system works off of friction now, the boat gets REALLY bogged down during slow motion.
-            //Mayhaps we need to use Time.fixedTimeScale? Or make the time scale faster?
-
-            Time.timeScale = 0.5f;
-            Time.fixedDeltaTime = 0.02f * Time.timeScale;
-            Debug.Log("Entered building trigger");
-        }
-        if (gameObject.CompareTag("Wall"))
+        switch (buildingType)
         {
-            //Check for ship velocity
-            //If velocity meets a threshhold, pass with a large reduction
-            //Otherwise, instantly stop and go to shop.
+            case BuildingType.Background:
+                BackgroundBehavior(collision);
+                break;
+            case BuildingType.Foreground:
+                ForegroundBehavior(collision);
+                break;
+            case BuildingType.Wall:
+                WallBehavior(collision);
+                break;
         }
     }
 
     //Time returns to normal and the building "explodes" once you LEV
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (collision.gameObject.layer == LayerMask.NameToLayer("PirateShip"))
+        currentlyColliding = false;
+
+        switch (buildingType)
         {
-            PirateShipTest.Instance.RemoveFrictionSource(gameObject);
-            Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
-            Time.timeScale = 1;
-            Time.fixedDeltaTime = 0.02f * Time.timeScale;
-            PirateShipTest.Instance.Velocity += explosionBoost;
-            Destroy(gameObject);
+            case BuildingType.Background:
+                BackgroundBehavior(collision);
+                break;
+            case BuildingType.Foreground:
+                ForegroundBehavior(collision);
+                break;
+            case BuildingType.Wall:
+                WallBehavior(collision);
+                break;
         }
     }
+
+    private void BackgroundBehavior(Collider2D collision)
+    {
+        if (currentlyColliding)
+        {
+            //If it's the pirate ship, slow down time for the cannon shot.
+            if (collision.gameObject.layer == LayerMask.NameToLayer("PirateShip"))
+            {
+                Time.timeScale = 0.5f;
+            }
+            //If it's a cannonball, spawn an explosion, give money and speed up ship.
+            if (collision.gameObject.layer == LayerMask.NameToLayer("CannonballUp"))
+            {
+                Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
+                PirateShipTest.Instance.Money += moneyValue;
+                PirateShipTest.Instance.Velocity += explosionBoost;
+            }
+        }
+        else
+        {
+            if (collision.gameObject.layer == LayerMask.NameToLayer("PirateShip"))
+            {
+                Time.timeScale = 1f;
+            }
+        }
+
+
+    }
+
+    private void ForegroundBehavior(Collider2D collision)
+    {
+        if (collision.gameObject.layer == LayerMask.NameToLayer("PirateShip"))
+        {
+            if (currentlyColliding)
+            {
+                Time.timeScale = 0.5f;
+                Time.fixedDeltaTime = 0.02f * Time.timeScale;
+                PirateShipTest.Instance.AddFrictionSource(gameObject, friction);
+                PirateShipTest.Instance.Money += moneyValue;
+            }
+            else
+            {
+                PirateShipTest.Instance.RemoveFrictionSource(gameObject);
+                Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
+                Time.timeScale = 1;
+                Time.fixedDeltaTime = 0.02f * Time.timeScale;
+                PirateShipTest.Instance.Velocity += explosionBoost;
+                Destroy(gameObject);
+            }
+        }
+
+    }
+
+    private void WallBehavior(Collider2D collision)
+    {
+
+    }
+
+
 }

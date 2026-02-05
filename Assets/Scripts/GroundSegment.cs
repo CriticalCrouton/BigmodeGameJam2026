@@ -22,12 +22,12 @@ public class GroundSegment : MonoBehaviour
     void Start()
     {
         //foreground and then background
-        SpawnRandomBuildings(possibleBuildingsForeground, UnityEngine.Random.Range(foregroundBuildingAmount.min, foregroundBuildingAmount.max));
-        // SpawnRandomBuildings(possibleBuildingsBackground, UnityEngine.Random.Range(backgroundBuildings.min, backgroundBuildings.max));
+        SpawnRandomBuildings(foregroundBuildingHeight, possibleBuildingsForeground, UnityEngine.Random.Range(foregroundBuildingAmount.min, foregroundBuildingAmount.max));
+        SpawnRandomBuildings(backgroundBuildingHeight, possibleBuildingsBackground, UnityEngine.Random.Range(backgroundBuildingsAmount.min, backgroundBuildingsAmount.max));
 
     }
 
-    void SpawnRandomBuildings(List<WeightedRandomItem<Building>> buildingsList, int count)
+    void SpawnRandomBuildings(Transform height, List<WeightedRandomItem<Building>> buildingsList, int count)
     {
         const int maxAttempts = 50;
 
@@ -48,7 +48,7 @@ public class GroundSegment : MonoBehaviour
                 float xPos = UnityEngine.Random.Range(length / 4f, length - (length / 4f));
                 Vector3 spawnPos = new Vector3(
                                     transform.position.x + xPos,
-                                    foregroundBuildingHeight.position.y,
+                                    height.position.y,
                                     buildingToSpawn.transform.position.z
                                 );
                 Physics2D.SyncTransforms();

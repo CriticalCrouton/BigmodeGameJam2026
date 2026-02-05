@@ -19,8 +19,8 @@ public class PirateShipTest : MonoBehaviour
 
     private Dictionary<GameObject, float> frictionSources = new(); //Sources of friction affecting the ship
 
-    [SerializeField]
-    TextMeshProUGUI moneyUI; //The UI that tells you how much money you have
+    // [SerializeField]
+    // TextMeshProUGUI moneyUI; //The UI that tells you how much money you have
 
     //Properties
     public float Velocity { get { return velocityX; } set { velocityX = value; } }
@@ -115,9 +115,6 @@ public class PirateShipTest : MonoBehaviour
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, angle), 0.1f);
 
         sinBounce += 5 * Time.deltaTime; //Multiplying value by Time makes the sin bounce faster.
-
-
-        moneyUI.text = "$: " + money;
     }
 
     void FixedUpdate()

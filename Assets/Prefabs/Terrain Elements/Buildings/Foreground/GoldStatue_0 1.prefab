@@ -111,6 +111,7 @@ MonoBehaviour:
   velocityLoss: 10
   friction: 0.999
   explosionBoost: 10000
+  buildingType: 1
 --- !u!61 &7475229459065832265
 BoxCollider2D:
   m_ObjectHideFlags: 0
