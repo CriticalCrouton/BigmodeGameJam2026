@@ -141,7 +141,7 @@ void HandleShop()
         
 
         //Resets the pirate ship to it's starting position.
-        PirateShipTest.Instance.gameObject.transform.position = new Vector3(2f, -5f, -3);
+        PirateShipTest.Instance.gameObject.transform.position = new Vector3(-2.54f, -3.05f, -3);
         MapGenerator.Instance.Reset();
         PirateShipTest.Instance.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
         playerVisual.enabled = true;
