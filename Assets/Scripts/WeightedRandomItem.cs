@@ -37,3 +37,10 @@ public static class WeightedRandom
         return itemList[itemList.Count - 1].item; // Fallback
     }
 }
+
+[Serializable]
+public class MinMax<T> where T : struct
+{
+    public T min;
+    public T max;
+}
