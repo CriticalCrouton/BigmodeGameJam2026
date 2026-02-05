@@ -31,7 +31,7 @@ public class GameManagement : MonoBehaviour
     TextMeshProUGUI launchUI; //Instructive text for launching
 
     [SerializeField]
-    Canvas shopCanvas; //Canvas containing shop ui
+    GameObject shopCanvas; //Canvas containing shop ui
 
     //Upgrade variables
 
