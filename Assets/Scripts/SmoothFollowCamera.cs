@@ -11,10 +11,10 @@ public class SmoothFollowCamera : MonoBehaviour
     public Vector2 offset = Vector2.zero;
 
     [Header("Zoom")]
-    public float minOrthographicSize = 5f;
-    public float maxOrthographicSize = 15f;
+    public float minOrthographicSize = 10f;
+    public float maxOrthographicSize = 100f;
     public float framePadding = 2f;
-    public float zoomSmoothTime = 0.3f;
+    public float zoomSmoothTime = 0.1f;
 
 
     private float initialZ;
