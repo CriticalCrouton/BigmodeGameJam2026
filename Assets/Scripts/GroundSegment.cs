@@ -45,7 +45,7 @@ public class GroundSegment : MonoBehaviour
 
             for (int attempt = 1; attempt <= maxAttempts; attempt++)
             {
-                float xPos = UnityEngine.Random.Range(0, length);
+                float xPos = UnityEngine.Random.Range(length * 1/4, length * 3/4);
                 Vector3 spawnPos = new Vector3(
                                     transform.position.x + xPos,
                                     height.position.y,

@@ -26,7 +26,7 @@ public class SmoothFollowCamera : MonoBehaviour
     private Collider2D targetCollider2D;
 
     Rigidbody2D targetRigidbody2D;
-    [SerializeField] float playerVelocityFactor = 0.5f;
+    [SerializeField] float playerVelocityFactor = 0.02f;
 
     void Start()
     {
