@@ -63,7 +63,7 @@ public class MapGenerator : MonoBehaviour
         activeSegments.Enqueue(newSegment);
         Debug.Log(newSegment.length);
 
-        nextX += newSegment.length * 2;
+        nextX += newSegment.length;
     }
 
 

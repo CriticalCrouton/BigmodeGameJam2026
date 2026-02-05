@@ -7,7 +7,7 @@ using UnityEngine;
 
 public class GroundSegment : MonoBehaviour
 {
-    public float length { get { return GetComponent<SpriteRenderer>().bounds.extents.x; } }
+    public float length { get { return GetComponent<SpriteRenderer>().bounds.extents.x * 2; } }
     public List<WeightedRandomItem<Building>> possibleBuildingsForeground;
     public List<WeightedRandomItem<Building>> possibleBuildingsBackground;
 
@@ -45,7 +45,7 @@ public class GroundSegment : MonoBehaviour
 
             for (int attempt = 1; attempt <= maxAttempts; attempt++)
             {
-                float xPos = UnityEngine.Random.Range(length / 4f, length - (length / 4f));
+                float xPos = UnityEngine.Random.Range(0, length);
                 Vector3 spawnPos = new Vector3(
                                     transform.position.x + xPos,
                                     height.position.y,

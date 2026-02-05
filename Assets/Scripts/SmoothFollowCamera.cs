@@ -25,6 +25,9 @@ public class SmoothFollowCamera : MonoBehaviour
     private Renderer targetRenderer;
     private Collider2D targetCollider2D;
 
+    Rigidbody2D targetRigidbody2D;
+    [SerializeField] float playerVelocityFactor = 0.5f;
+
     void Start()
     {
         initialZ = transform.position.z;
@@ -37,6 +40,7 @@ public class SmoothFollowCamera : MonoBehaviour
         {
             targetRenderer = target.GetComponent<Renderer>();
             targetCollider2D = target.GetComponent<Collider2D>();
+            targetRigidbody2D = target.GetComponent<Rigidbody2D>();
         }
     }
 
@@ -54,6 +58,10 @@ public class SmoothFollowCamera : MonoBehaviour
         Bounds targetBounds = GetTargetBounds();
 
         float requiredSize = CalculateRequiredCameraSize(targetBounds);
+        if (targetRigidbody2D != null)
+        {
+            requiredSize += Mathf.Abs(targetRigidbody2D.linearVelocity.magnitude) * playerVelocityFactor;
+        }
 
         // Smooth zoom
         float targetSize = Mathf.Clamp(requiredSize, minOrthographicSize, maxOrthographicSize);
