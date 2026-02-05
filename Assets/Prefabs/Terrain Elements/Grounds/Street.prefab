@@ -56,7 +56,7 @@ Transform:
   m_GameObject: {fileID: 2588314774378391380}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 76.21662, y: -2.7, z: 0}
+  m_LocalPosition: {x: 76.21662, y: -3.27, z: 0}
   m_LocalScale: {x: 1.281215, y: 2.4392235, z: 0.86450094}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -90,7 +90,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: -3.7, z: 0}
-  m_LocalScale: {x: 0.7805092, y: 0.40996653, z: 1.1567367}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2400019940116809192}
@@ -187,3 +187,9 @@ MonoBehaviour:
   possibleBuildingsBackground: []
   foregroundBuildingHeight: {fileID: 2400019940116809192}
   backgroundBuildingHeight: {fileID: 6436218714342078995}
+  foregroundBuildingAmount:
+    min: 5
+    max: 20
+  backgroundBuildingsAmount:
+    min: 5
+    max: 20

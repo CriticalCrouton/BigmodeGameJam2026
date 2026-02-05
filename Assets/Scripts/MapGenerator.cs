@@ -9,9 +9,9 @@ public class MapGenerator : MonoBehaviour
 
     public Transform player;
     public List<WeightedRandomItem<GroundSegment>> segmentPrefabs;
-    
+
     public int segmentsAhead = 3;
-    private float nextX = 23f;
+    private float nextX = 41f;
     private Queue<GroundSegment> activeSegments = new Queue<GroundSegment>();
 
     private void Awake()
@@ -29,8 +29,7 @@ public class MapGenerator : MonoBehaviour
     void Start()
     {
         player = PirateShipTest.Instance.transform;
-        for (int i = 0; i < segmentsAhead; i++)
-            SpawnSegment();
+        SpawnSegments(10);
     }
 
     void Update()
@@ -39,19 +38,25 @@ public class MapGenerator : MonoBehaviour
 
         if (player.position.x + 50 >= nextX)
         {
-            SpawnSegment();
+            SpawnSegments(10);
             RemoveOldSegment();
         }
     }
 
-    void SpawnSegment()
+    void SpawnSegments(int count)
     {
-        
-        GroundSegment segmentToSpawn = WeightedRandom.getRandomItem(segmentPrefabs);
+        for (int i = 0; i < count; i++)
+        {
+            SpawnSegment(WeightedRandom.getRandomItem(segmentPrefabs));
+        }
+    }
+
+    public void SpawnSegment(GroundSegment segmentToSpawn)
+    {
 
         GroundSegment newSegment = Instantiate(
             segmentToSpawn,
-            new Vector3(nextX, -4, 0.1f),
+            new Vector3(nextX, -6, 0.1f),
             Quaternion.identity
         );
 
@@ -78,8 +83,7 @@ public class MapGenerator : MonoBehaviour
         }
         activeSegments.Clear();
         nextX = 23f;
-        
-        for (int i = 0; i < segmentsAhead; i++)
-            SpawnSegment();
+
+        SpawnSegments(10);
     }
 }
