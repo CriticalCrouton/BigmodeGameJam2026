@@ -13,13 +13,18 @@ public class GroundSegment : MonoBehaviour
 
     [SerializeField] Transform foregroundBuildingHeight;
     [SerializeField] Transform backgroundBuildingHeight;
+    [SerializeField] MinMax<int> foregroundBuildingAmount;
+    [SerializeField] MinMax<int> backgroundBuildingsAmount;
+    
 
-    public List<Building> buildings = new List<Building>();
+    List<Building> buildings = new List<Building>();
 
     void Start()
     {
-        SpawnRandomBuildings(possibleBuildingsForeground, UnityEngine.Random.Range(2, 5));
-        //SpawnRandomBuildingsBackground(UnityEngine.Random.Range(2, 5));
+        //foreground and then background
+        SpawnRandomBuildings(possibleBuildingsForeground, UnityEngine.Random.Range(foregroundBuildingAmount.min, foregroundBuildingAmount.max));
+        // SpawnRandomBuildings(possibleBuildingsBackground, UnityEngine.Random.Range(backgroundBuildings.min, backgroundBuildings.max));
+
     }
 
     void SpawnRandomBuildings(List<WeightedRandomItem<Building>> buildingsList, int count)
