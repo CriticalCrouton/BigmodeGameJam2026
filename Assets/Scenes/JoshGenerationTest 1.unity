@@ -1751,6 +1751,7 @@ MonoBehaviour:
   reloadAnim: {fileID: 1055311481}
   cannonballPrefab: {fileID: 4862299139352973928, guid: dfc0fa245183f684fb2775d14b062ebc, type: 3}
   cannonballFireAnimation: {fileID: 8125641908725630887, guid: 43de6df80e77b5d4cba6c4138c1fcada, type: 3}
+  parentTarget: {fileID: 506162840}
   startingCannonballs: 40000
   reloadTime: 3
   fireOffset: 1
@@ -3238,6 +3239,11 @@ MonoBehaviour:
   lockX: 0
   lockY: 1
   offset: {x: 4, y: 0}
+  minOrthographicSize: 10
+  maxOrthographicSize: 100
+  framePadding: 2
+  zoomSmoothTime: 0.1
+  playerVelocityFactor: 0.02
 --- !u!1 &1388047881
 GameObject:
   m_ObjectHideFlags: 0
@@ -3249,6 +3255,7 @@ GameObject:
   - component: {fileID: 1388047882}
   - component: {fileID: 1388047884}
   - component: {fileID: 1388047883}
+  - component: {fileID: 1388047885}
   m_Layer: 5
   m_Name: MoneyUI
   m_TagString: Untagged
@@ -3374,6 +3381,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1388047881}
   m_CullTransparentMesh: 1
+--- !u!114 &1388047885
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1388047881}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d4d77b89b0793f341bf5a45abd2790b2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::DisplayMoney
 --- !u!1 &1460351648
 GameObject:
   m_ObjectHideFlags: 0
@@ -3785,7 +3804,7 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   launchUI: {fileID: 641907413}
-  shopCanvas: {fileID: 1811364033}
+  shopCanvas: {fileID: 123310647}
   levelBar:
   - {fileID: 6026151842308396209, guid: 14d3e90997a6e624abe123c4fd5ba8a7, type: 3}
   - {fileID: 7467354128804517314, guid: 14d3e90997a6e624abe123c4fd5ba8a7, type: 3}
@@ -4639,7 +4658,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PirateShipTest
   StartingVelocity: 160
-  moneyUI: {fileID: 1388047883}
 --- !u!50 &2016495177
 Rigidbody2D:
   serializedVersion: 5

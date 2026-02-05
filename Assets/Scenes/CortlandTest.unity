@@ -3157,6 +3157,7 @@ MonoBehaviour:
   maxOrthographicSize: 15
   framePadding: 2
   zoomSmoothTime: 0.3
+  playerVelocityFactor: 0.02
 --- !u!1 &1366600790
 GameObject:
   m_ObjectHideFlags: 0

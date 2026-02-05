@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 65ac280654e5e6d4ca0c57a1a6132297
+guid: b09bd3ff90ff1a24a8c06deff05d2dbc
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 3905500521545508852
-    second: HolyShitFace-1.png_0
+      213: -2457691081709274943
+    second: HolyShitFace (1)_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,23 +113,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: HolyShitFace-1.png_0
+      name: HolyShitFace (1)_0
       rect:
         serializedVersion: 2
-        x: 29
-        y: 0
-        width: 931
-        height: 960
+        x: 0
+        y: 640
+        width: 640
+        height: 640
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4f7a2d83800233630800000000000000
-      internalID: 3905500521545508852
+      spriteID: 1c8b21b8bf684edd0800000000000000
+      internalID: -2457691081709274943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HolyShitFace (1)_1
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 640
+        width: 640
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d61a50a8a7bb5ca4dba7a167c7c34a26
+      internalID: 1684409246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HolyShitFace (1)_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 640
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b719d6387f4542c419a1bebd66158101
+      internalID: -1974079229
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: HolyShitFace (1)_3
+      rect:
+        serializedVersion: 2
+        x: 640
+        y: 0
+        width: 640
+        height: 640
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b7fdd56d2acdf524a80212aa9058b1cb
+      internalID: 1735976542
       vertices: []
       indices: 
       edges: []
@@ -138,7 +204,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 5e97eb03825dee720800000000000000
+    spriteID: 4f7c7bca2e09d674eb3d930096d5f8d7
     internalID: 0
     vertices: []
     indices: 
@@ -146,9 +212,14 @@ TextureImporter:
     weights: []
     secondaryTextures: []
     spriteCustomMetadata:
-      entries: []
+      entries:
+      - key: SpriteEditor.SliceSettings
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":2.0,"y":2.0},"gridSpriteSize":{"x":640.0,"y":640.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":2,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      HolyShitFace-1.png_0: 3905500521545508852
+      HolyShitFace (1)_0: -2457691081709274943
+      HolyShitFace (1)_1: 1684409246
+      HolyShitFace (1)_2: -1974079229
+      HolyShitFace (1)_3: 1735976542
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -76,7 +76,7 @@ public class Building : MonoBehaviour
                 Time.timeScale = 0.5f;
             }
             //If it's a cannonball, spawn an explosion, give money and speed up ship.
-            if (collision.gameObject.layer == LayerMask.NameToLayer("CannonballUp"))
+            if (collision.gameObject.layer == LayerMask.NameToLayer("Cannonball"))
             {
                 Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
                 PirateShipTest.Instance.Money += moneyValue;
@@ -120,7 +120,9 @@ public class Building : MonoBehaviour
 
     private void WallBehavior(Collider2D collision)
     {
-
+        //Check for a certain velocity threshhold
+        //If it is met, you pass (with aplomb)
+        //if not, you instantly crash and fail
     }
 
 
