@@ -20,6 +20,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/(OLD)MichaelTest.unity
     guid: a97b3382df5b4fa4c9efe57eb5c6f8ff
+  - enabled: 1
+    path: Assets/Scenes/CortlandTest.unity
+    guid: 33bd480d5c7daa041b3797ec27a3ed88
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
