@@ -33,12 +33,32 @@ public class GameManagement : MonoBehaviour
     [SerializeField]
     GameObject shopCanvas; //Canvas containing shop ui
 
+    PirateShipTest pirateShip = PirateShipTest.Instance;
+
     //Upgrade variables
 
     public Upgrade[] upgradeList = new Upgrade[5];
 
     [SerializeField]
     Sprite[] levelBar = new Sprite[6]; //Level up bar spritesheet
+
+    [SerializeField]
+    Building[] buildingPrefabs;
+
+    [SerializeField]
+    CannonFire cannonFireScript;
+
+    //Upgrade method percentage variables
+    [SerializeField]
+    float sailPercent = 1.05f;
+    [SerializeField]
+    float oilPercent = 0.95f;
+    [SerializeField]
+    int startingBallBonus = 2;
+    [SerializeField]
+    int cashBonus = 100;
+    [SerializeField]
+    float shipPercent = 0.95f;
 
     //Singleton Instance Property
     public static GameManagement Instance { get; private set; }
@@ -76,69 +96,69 @@ public class GameManagement : MonoBehaviour
     {
         state = GameState.Prerun;
         playerVisual = PirateShipTest.Instance.GetComponent<SpriteRenderer>();
-        
+
     }
 
 
     // Update is called once per frame
     void Update()
-{
-    //Debug.Log("Current Game State: " + state.ToString());
-    switch (state)
     {
-        case GameState.Prerun:
-            HandlePreRun();
-            break;
+        //Debug.Log("Current Game State: " + state.ToString());
+        switch (state)
+        {
+            case GameState.Prerun:
+                HandlePreRun();
+                break;
 
-        case GameState.Run:
-            HandleRun();
-            break;
+            case GameState.Run:
+                HandleRun();
+                break;
 
-        case GameState.Shop:
-            HandleShop();
-            break;
-    }
-}
-
-void HandlePreRun()
-{
-    launchUI.enabled = true;
-    shopCanvas.gameObject.SetActive(false);
-
-    // Transition to Run when boat launches
-    if (PirateShipTest.Instance.Launched)
-    {
-        state = GameState.Run;
-    }
-}
-
-void HandleRun()
-{
-    launchUI.enabled = false;
-    shopCanvas.gameObject.SetActive(false);
-
-    // Detect stop
-    if (PirateShipTest.Instance.Velocity <= 0.5f)
-    {
-        PirateShipTest.Instance.Velocity = 0;
-        state = GameState.Shop;
+            case GameState.Shop:
+                HandleShop();
+                break;
+        }
     }
 
-    lastFrameXPos = PirateShipTest.Instance.transform.position.x;
-}
+    void HandlePreRun()
+    {
+        launchUI.enabled = true;
+        shopCanvas.gameObject.SetActive(false);
 
-void HandleShop()
-{
-    launchUI.enabled = false;
-    shopCanvas.gameObject.SetActive(true);
-}
+        // Transition to Run when boat launches
+        if (PirateShipTest.Instance.Launched)
+        {
+            state = GameState.Run;
+        }
+    }
+
+    void HandleRun()
+    {
+        launchUI.enabled = false;
+        shopCanvas.gameObject.SetActive(false);
+
+        // Detect stop
+        if (PirateShipTest.Instance.Velocity <= 0.5f)
+        {
+            PirateShipTest.Instance.Velocity = 0;
+            state = GameState.Shop;
+        }
+
+        lastFrameXPos = PirateShipTest.Instance.transform.position.x;
+    }
+
+    void HandleShop()
+    {
+        launchUI.enabled = false;
+        shopCanvas.gameObject.SetActive(true);
+    }
 
 
 
     //When the button is clicked, the game will restart.
     public void Restart()
     {
-        
+
 
         //Resets the pirate ship to it's starting position.
         PirateShipTest.Instance.gameObject.transform.position = new Vector3(-2.54f, -3.05f, -3);
@@ -169,5 +189,32 @@ void HandleShop()
         playerVisual.enabled = false;
         launchUI.enabled = false;
         shopCanvas.gameObject.SetActive(true);
+    }
+    public void SailUpgrade()
+    {
+        pirateShip.StartingVelocity *= sailPercent;
+    }
+    public void OilUpgrade()
+    {
+        //pirateShip.shipFriction *= oilPercent;
+    }
+    public void CannonballUpgrade()
+    {
+        foreach(Building b in buildingPrefabs)
+        {
+            b.MoneyValue += cashBonus;
+        }
+    }
+    public void CannonUpgrade()
+    {
+        cannonFireScript.StartingCannonballs += startingBallBonus;
+    }
+    public void ShipUpgrade()
+    {
+        foreach (Building b in buildingPrefabs)
+        {
+            b.MoneyValue += cashBonus;
+            b.VelocityLoss *= shipPercent;
+        }
     }
 }

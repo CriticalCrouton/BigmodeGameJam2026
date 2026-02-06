@@ -27,7 +27,10 @@ public class Building : MonoBehaviour
 
     private bool currentlyColliding = false;
 
-
+    //Properties
+    public int MoneyValue { get { return moneyValue; } set { moneyValue = value; } }
+    public float VelocityLoss { get { return velocityLoss; } set { velocityLoss = value; } }
+    
     //The money, slowdown, and slow-motion effect happen when you ENTER the building
     private void OnTriggerEnter2D(Collider2D collision)
     {

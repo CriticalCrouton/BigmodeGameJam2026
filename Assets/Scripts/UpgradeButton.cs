@@ -46,17 +46,47 @@ public class UpgradeButton : MonoBehaviour
 
     public void ButtonPress()
     {
+        Debug.Log("Change the method NOW!");
+    }
+    public void Sail()
+    {
         Debug.Log(currentUpgrade.Name);
         if (currentUpgrade.LevelUp())
         {
-            // Code to change the level graphic for upgrade icon
-            
-        }
-        else
-        {
-            //Code to show not enough money ui
-            
+            manager.SailUpgrade();
         }
     }
-
+    public void Oil()
+    {
+        Debug.Log(currentUpgrade.Name);
+        if (currentUpgrade.LevelUp())
+        {
+            manager.OilUpgrade();
+        }
+    }
+    public void CannonBall()
+    {
+        Debug.Log(currentUpgrade.Name);
+        if (currentUpgrade.LevelUp())
+        {
+            manager.CannonballUpgrade();
+        }
+    }
+    public void Cannon()
+    {
+        Debug.Log(currentUpgrade.Name);
+        if (currentUpgrade.LevelUp())
+        {
+            manager.CannonUpgrade();
+        }
+    }
+    public void Ship()
+    {
+        Debug.Log(currentUpgrade.Name);
+        if (currentUpgrade.LevelUp())
+        {
+            manager.ShipUpgrade();
+        }
+    }
+    
 }

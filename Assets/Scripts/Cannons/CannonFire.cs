@@ -32,6 +32,9 @@ public class CannonFire : MonoBehaviour
 
     public float reloadTime = 3.0f; //Time it takes to reload a cannonball
 
+    //Properties
+    public int StartingCannonballs { get { return startingCannonballs; } set { startingCannonballs = value; } }
+
     private bool anyArrowPressed()
     {
         return Keyboard.current.upArrowKey.isPressed ||

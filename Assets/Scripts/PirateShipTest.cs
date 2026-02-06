@@ -7,7 +7,7 @@ using UnityEngine.InputSystem;
 public class PirateShipTest : MonoBehaviour
 {
     [SerializeField]
-    float StartingVelocity; //How fast the boat will move when it's launched
+    float startingVelocity; //How fast the boat will move when it's launched
 
     private int money; //How much money the player has
 
@@ -26,6 +26,7 @@ public class PirateShipTest : MonoBehaviour
     public float Velocity { get { return velocityX; } set { velocityX = value; } }
     public int Money { get { return money; } set { money = value; } }
     public bool Launched { get { return launched; } set { launched = value; } }
+    public float StartingVelocity { get { return startingVelocity; } set { startingVelocity = value; } }
 
     public float shipFriction
     {
@@ -80,7 +81,7 @@ public class PirateShipTest : MonoBehaviour
         //Boat launch (with space)
         if (Input.GetKeyDown(KeyCode.Space) && launched == false)
         {
-            velocityX = StartingVelocity;
+            velocityX = startingVelocity;
             launched = true;
             GameManagement.Instance.GameState = GameState.Run;
         }
