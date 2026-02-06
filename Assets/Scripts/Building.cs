@@ -50,6 +50,8 @@ public class Building : MonoBehaviour
         }
         //Activates face-changing procedures
         GameManagement.Instance.ReactionController.CoolShit = true;
+        int randomSound = Random.Range(0, 5);
+        SoundFXManager.Instance.Source.PlayOneShot(SoundFXManager.Instance.CrashSounds[randomSound], 1);
     }
 
     //Time returns to normal and the building "explodes" once you LEV
