@@ -48,6 +48,8 @@ public class Building : MonoBehaviour
                 WallBehavior(collision);
                 break;
         }
+        //Activates face-changing procedures
+        GameManagement.Instance.ReactionController.CoolShit = true;
     }
 
     //Time returns to normal and the building "explodes" once you LEV
@@ -67,6 +69,9 @@ public class Building : MonoBehaviour
                 WallBehavior(collision);
                 break;
         }
+        //Activates face-changing procedures
+        GameManagement.Instance.ReactionController.CoolShit = false;
+        
     }
 
     private void BackgroundBehavior(Collider2D collision)
@@ -123,9 +128,11 @@ public class Building : MonoBehaviour
 
     private void WallBehavior(Collider2D collision)
     {
-        //Check for a certain velocity threshhold
-        //If it is met, you pass (with aplomb)
-        //if not, you instantly crash and fail
+        if (PirateShipTest.Instance.Velocity < 150)
+        {
+            Instantiate(explosion, PirateShipTest.Instance.gameObject.transform.position, Quaternion.identity);
+            PirateShipTest.Instance.Velocity = 0;
+        }
     }
 
 

@@ -329,7 +329,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 412278305}
-  - {fileID: 1972996311}
+  - {fileID: 691393738}
   - {fileID: 1513651515}
   - {fileID: 501801060}
   - {fileID: 1132647817}
@@ -1193,7 +1193,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 32767
   m_Sprite: {fileID: -1743504326162083876, guid: 309861c4b44bfea4a9814820cb1a3125, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -1214,7 +1214,7 @@ Transform:
   m_GameObject: {fileID: 451169962}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -39.3, y: -0.30516, z: 0}
+  m_LocalPosition: {x: -78.24, y: -0.30516, z: 0}
   m_LocalScale: {x: 0.69064, y: 0.69064, z: 0.69064}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1325,14 +1325,14 @@ RectTransform:
   m_GameObject: {fileID: 501801059}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.5291, y: 2.5291, z: 2.5291}
+  m_LocalScale: {x: 1.5456089, y: 1.5456089, z: 1.5456089}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 42597075}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 31, y: 194}
+  m_AnchoredPosition: {x: -279, y: 21}
   m_SizeDelta: {x: 615.6227, y: 90.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &501801061
@@ -1588,7 +1588,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 603572090}
         m_TargetAssemblyTypeName: UpgradeButton, Assembly-CSharp
-        m_MethodName: ButtonPress
+        m_MethodName: CannonBall
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1686,7 +1686,7 @@ MonoBehaviour:
   cannonballPrefab: {fileID: 4862299139352973928, guid: dfc0fa245183f684fb2775d14b062ebc, type: 3}
   cannonballFireAnimation: {fileID: 8125641908725630887, guid: 43de6df80e77b5d4cba6c4138c1fcada, type: 3}
   parentTarget: {fileID: 506162840}
-  startingCannonballs: 40000
+  startingCannonballs: 4
   reloadTime: 3
   fireOffset: 1
 --- !u!212 &671479403
@@ -1747,6 +1747,118 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &691393737
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 691393738}
+  - component: {fileID: 691393740}
+  - component: {fileID: 691393739}
+  - component: {fileID: 691393742}
+  - component: {fileID: 691393741}
+  m_Layer: 5
+  m_Name: TopRightSign
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &691393738
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691393737}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1972996311}
+  m_Father: {fileID: 42597075}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 581.7961, y: 824}
+  m_SizeDelta: {x: 449.87, y: 414.611}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &691393739
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691393737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEngine.UI::UnityEngine.UI.Image
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.8018868, g: 0.7597906, b: 0.13238695, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 0}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &691393740
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691393737}
+  m_CullTransparentMesh: 1
+--- !u!114 &691393741
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691393737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e60004e4dfc8b241bcb933ed8e7a0dd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::AnimatedUISign
+--- !u!95 &691393742
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 691393737}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9ce445c3a1067cb4a9ecbbb15afac932, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &718181259
 GameObject:
   m_ObjectHideFlags: 0
@@ -2027,7 +2139,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 769683550}
         m_TargetAssemblyTypeName: UpgradeButton, Assembly-CSharp
-        m_MethodName: ButtonPress
+        m_MethodName: Oil
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3154,7 +3266,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1254958382}
         m_TargetAssemblyTypeName: UpgradeButton, Assembly-CSharp
-        m_MethodName: ButtonPress
+        m_MethodName: Cannon
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -3613,7 +3725,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1366600792}
         m_TargetAssemblyTypeName: UpgradeButton, Assembly-CSharp
-        m_MethodName: ButtonPress
+        m_MethodName: Ship
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4237,7 +4349,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1483793262}
         m_TargetAssemblyTypeName: UpgradeButton, Assembly-CSharp
-        m_MethodName: ButtonPress
+        m_MethodName: Sail
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4386,16 +4498,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1513651514}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 2.0383182, y: 2.0383182, z: 2.0383182}
+  m_LocalScale: {x: 2.0383184, y: 2.0383182, z: 2.0383184}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 42597075}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -464, y: 223}
+  m_AnchoredPosition: {x: -464.00006, y: 223.00018}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!95 &1513651516
@@ -4607,6 +4719,7 @@ MonoBehaviour:
   - {fileID: 0}
   launchUI: {fileID: 501801061}
   shopCanvas: {fileID: 484145567}
+  reactionController: {fileID: 1972996316}
   levelBar:
   - {fileID: 6026151842308396209, guid: 14d3e90997a6e624abe123c4fd5ba8a7, type: 3}
   - {fileID: 7467354128804517314, guid: 14d3e90997a6e624abe123c4fd5ba8a7, type: 3}
@@ -4614,6 +4727,22 @@ MonoBehaviour:
   - {fileID: 872752157469293035, guid: 14d3e90997a6e624abe123c4fd5ba8a7, type: 3}
   - {fileID: -2624969483758068100, guid: 14d3e90997a6e624abe123c4fd5ba8a7, type: 3}
   - {fileID: -1238026910689060425, guid: 14d3e90997a6e624abe123c4fd5ba8a7, type: 3}
+  buildingPrefabs:
+  - {fileID: 5827078708291273967, guid: d8b2ca2b047ff2c4797ba539cefd61c8, type: 3}
+  - {fileID: 8326051890897102138, guid: f6d108d8ace64ae4d9cff483d109b31d, type: 3}
+  - {fileID: 7833231448266138712, guid: 1436cd3231edb074d9ed8e1fa5a4d762, type: 3}
+  - {fileID: 6498714553113649644, guid: 5c243f07be03384418e0a7c5687cf8a8, type: 3}
+  - {fileID: 2829934374139390521, guid: 785d67ca41b5e854c8732a803a668dd6, type: 3}
+  - {fileID: 6435389368857096447, guid: 7c0d6b3bc6e19ef40b4fc0a6bd7884fc, type: 3}
+  - {fileID: 7446266489799873236, guid: e50ca1cf9badd2d48bc9df15ef991072, type: 3}
+  - {fileID: 2680089431640477406, guid: 7321c695b7d7f5149888c77a9becdb98, type: 3}
+  - {fileID: 6435389368857096447, guid: aad559b7cda11bf43b51ccafb62bf362, type: 3}
+  cannonFireScript: {fileID: 671479402}
+  sailPercent: 1.05
+  oilPercent: 0.95
+  startingBallBonus: 2
+  cashBonus: 100
+  shipPercent: 0.95
 --- !u!4 &1664949173
 Transform:
   m_ObjectHideFlags: 0
@@ -5343,6 +5472,7 @@ GameObject:
   - component: {fileID: 1972996314}
   - component: {fileID: 1972996313}
   - component: {fileID: 1972996315}
+  - component: {fileID: 1972996316}
   m_Layer: 5
   m_Name: LivePirateReaction
   m_TagString: Untagged
@@ -5363,11 +5493,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1507224583}
-  m_Father: {fileID: 42597075}
+  m_Father: {fileID: 691393738}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 580.09, y: 257}
+  m_AnchoredPosition: {x: -1.7060547, y: 0.35028076}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1972996313
@@ -5430,6 +5560,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &1972996316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1972996310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4ff456e09142b71408abfc6bb731ec3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::ReactionChanges
 --- !u!1 &1981591002
 GameObject:
   m_ObjectHideFlags: 0
@@ -5673,7 +5815,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073a9835feedff441b906471e8763869, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PirateShipTest
-  StartingVelocity: 160
+  startingVelocity: 180
 --- !u!50 &2016495177
 Rigidbody2D:
   serializedVersion: 5

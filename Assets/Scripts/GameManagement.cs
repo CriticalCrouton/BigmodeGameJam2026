@@ -33,7 +33,8 @@ public class GameManagement : MonoBehaviour
     [SerializeField]
     GameObject shopCanvas; //Canvas containing shop ui
 
-    PirateShipTest pirateShip = PirateShipTest.Instance;
+    [SerializeField]
+    ReactionChanges reactionController;
 
     //Upgrade variables
 
@@ -65,6 +66,7 @@ public class GameManagement : MonoBehaviour
 
     //Properties
     public GameState GameState { get { return state; } set { state = value; } }
+    public ReactionChanges ReactionController { get { return reactionController; } set { reactionController = value; } }
 
     public Sprite[] LevelBar
     {
@@ -192,7 +194,7 @@ public class GameManagement : MonoBehaviour
     }
     public void SailUpgrade()
     {
-        pirateShip.StartingVelocity *= sailPercent;
+        PirateShipTest.Instance.StartingVelocity *= sailPercent;
     }
     public void OilUpgrade()
     {
