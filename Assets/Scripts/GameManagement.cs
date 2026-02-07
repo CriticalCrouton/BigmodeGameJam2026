@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using NUnit.Framework.Constraints;
 using System.Linq;
+using UnityEngine.SceneManagement;
 
 public enum GameState
 {
@@ -124,6 +125,10 @@ public class GameManagement : MonoBehaviour
             case GameState.Shop:
                 HandleShop();
                 break;
+        }
+        if (PirateShipTest.Instance.gameObject.transform.position.x > 3000) //Win condition
+        {
+            SceneManager.LoadScene("VictoryScreen");
         }
     }
 
