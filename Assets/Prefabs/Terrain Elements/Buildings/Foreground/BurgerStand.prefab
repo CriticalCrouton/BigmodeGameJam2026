@@ -108,8 +108,8 @@ MonoBehaviour:
   explosion: {fileID: 288178582856079442, guid: 72064ecbb7a94af49a0375fadd7fb9e7, type: 3}
   moneyValue: 33
   velocityLoss: 3
-  friction: 0.99
-  explosionBoost: 5
+  friction: 0.995
+  explosionBoost: 26
   buildingType: 1
 --- !u!61 &8091127984574883213
 BoxCollider2D:

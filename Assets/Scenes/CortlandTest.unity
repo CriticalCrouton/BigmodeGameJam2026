@@ -1101,7 +1101,7 @@ Transform:
   m_GameObject: {fileID: 451169962}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -78.24, y: -0.30516, z: 0}
+  m_LocalPosition: {x: 2990, y: -0.30516, z: 0}
   m_LocalScale: {x: 0.69064, y: 0.69064, z: 0.69064}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1219,7 +1219,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -279, y: 110}
+  m_AnchoredPosition: {x: -279, y: 156}
   m_SizeDelta: {x: 615.6227, y: 90.06}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &501801061
@@ -1243,7 +1243,8 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_text: Press Space to Launch the Boat! \nPress the Up arrow to fire cannonballs!\nCrash
-    through buildings in front of you and shoot buildings behind you to get mad cash!
+    through buildings in front of you and shoot buildings behind you to get mad cash
+    and build mad speed!
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -4288,9 +4289,9 @@ MonoBehaviour:
   - {fileID: 6435389368857096447, guid: aad559b7cda11bf43b51ccafb62bf362, type: 3}
   cannonFireScript: {fileID: 671479402}
   sailPercent: 1.33
-  oilPercent: 0.002
+  oilPercent: 0.005
   startingBallBonus: 2
-  cashBonus: 100
+  cashBonus: 200
   shipPercent: 1.002
 --- !u!4 &1664949173
 Transform:
@@ -4988,6 +4989,9 @@ MonoBehaviour:
     weight: 100
   - item: {fileID: 4568538695146515329, guid: b7d27a50d25ff3d44ac85164061b621a, type: 3}
     weight: 1
+  - item: {fileID: 4568538695146515329, guid: b366abdc9f2bcb642ad5cea6a266c1a8, type: 3}
+    weight: 0
+  wallSegment: {fileID: 4568538695146515329, guid: b366abdc9f2bcb642ad5cea6a266c1a8, type: 3}
   segmentsAhead: 3
 --- !u!4 &1863040436
 Transform:
@@ -5511,7 +5515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073a9835feedff441b906471e8763869, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PirateShipTest
-  startingVelocity: 175
+  startingVelocity: 200
 --- !u!50 &2016495177
 Rigidbody2D:
   serializedVersion: 5

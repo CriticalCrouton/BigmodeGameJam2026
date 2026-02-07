@@ -40,8 +40,10 @@ public class UpgradeButton : MonoBehaviour
     private void Update()
     {
         costText.text = "Cost: $" + currentUpgrade.Cost;
-
-        levelBarImg.sprite = lvBar[currentUpgrade.Level];
+        if (currentUpgrade.Level <= 5)
+        {
+            levelBarImg.sprite = lvBar[currentUpgrade.Level];
+        }
     }
 
     public void ButtonPress()
@@ -117,7 +119,10 @@ public class UpgradeButton : MonoBehaviour
 
     private void UpgradeSound()
     {
-        SoundFXManager.Instance.Source.PlayOneShot(SoundFXManager.Instance.UpgradeSounds[currentUpgrade.Level - 1], 1);
+        if (currentUpgrade.Level <= 5)
+        {
+            SoundFXManager.Instance.Source.PlayOneShot(SoundFXManager.Instance.UpgradeSounds[currentUpgrade.Level - 1], 1);
+        }
     }
 
     private void NotEnoughMoney()

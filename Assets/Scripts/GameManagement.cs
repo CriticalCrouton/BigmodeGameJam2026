@@ -126,7 +126,7 @@ public class GameManagement : MonoBehaviour
                 HandleShop();
                 break;
         }
-        if (PirateShipTest.Instance.gameObject.transform.position.x > 3000) //Win condition
+        if (PirateShipTest.Instance.gameObject.transform.position.x > 500) //Win condition
         {
             SceneManager.LoadScene("VictoryScreen");
         }
@@ -204,10 +204,6 @@ public class GameManagement : MonoBehaviour
         {
             PirateShipTest.Instance.AddFrictionSource(PirateShipTest.Instance.gameObject, 0.999f + (oilPercent * currentLevel));
         }
-        else
-        {
-            PirateShipTest.Instance.AddFrictionSource(PirateShipTest.Instance.gameObject, 0.999999f);
-        }
     }
     public void CannonballUpgrade()
     {
@@ -225,7 +221,7 @@ public class GameManagement : MonoBehaviour
         foreach (Building b in buildingPrefabs)
         {
             b.ForegroundCashBonus += cashBonus;
-            b.FrictionMultiplier += 0.002f;
+            b.FrictionMultiplier += 0.003f;
         }
     }
 }

@@ -130,11 +130,12 @@ public class Building : MonoBehaviour
                 Time.fixedDeltaTime = 0.02f * Time.timeScale;
                 PirateShipTest.Instance.AddFrictionSource(gameObject, (friction * frictionMultiplier));
                 PirateShipTest.Instance.Money += moneyValue + foregroundCashBonus;
+                PirateShipTest.Instance.Money += moneyValue + foregroundCashBonus;
             }
             else
             {
                 PirateShipTest.Instance.RemoveFrictionSource(gameObject);
-                Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
+                //Instantiate(explosion, gameObject.transform.position, Quaternion.identity);
                 Time.timeScale = 1;
                 Time.fixedDeltaTime = 0.02f * Time.timeScale;
                 PirateShipTest.Instance.Velocity += explosionBoost;
@@ -148,8 +149,16 @@ public class Building : MonoBehaviour
     {
         if (PirateShipTest.Instance.Velocity < 150)
         {
-            Instantiate(explosion, PirateShipTest.Instance.gameObject.transform.position, Quaternion.identity);
+            //Instantiate(explosion, PirateShipTest.Instance.gameObject.transform.position, Quaternion.identity);
             PirateShipTest.Instance.Velocity = 0;
+            SoundFXManager.Instance.Source.PlayOneShot(SoundFXManager.Instance.WallCrash);
+            Time.timeScale = 1f;
+        }
+        else
+        {
+            SoundFXManager.Instance.Source.PlayOneShot(SoundFXManager.Instance.WallCrash);
+            Time.timeScale = 1f;
+            PirateShipTest.Instance.Money += 2000;
         }
     }
 

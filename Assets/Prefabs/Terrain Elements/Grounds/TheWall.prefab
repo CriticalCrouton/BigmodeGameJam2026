@@ -74,7 +74,7 @@ GameObject:
   - component: {fileID: 8156498351119812684}
   - component: {fileID: 4568538695146515329}
   m_Layer: 0
-  m_Name: Street
+  m_Name: TheWall
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -168,21 +168,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   possibleBuildingsForeground:
-  - item: {fileID: 8326051890897102138, guid: f6d108d8ace64ae4d9cff483d109b31d, type: 3}
-    weight: 10
-  - item: {fileID: 2829934374139390521, guid: 785d67ca41b5e854c8732a803a668dd6, type: 3}
-    weight: 20
-  - item: {fileID: 7833231448266138712, guid: 1436cd3231edb074d9ed8e1fa5a4d762, type: 3}
-    weight: 25
-  - item: {fileID: 7446266489799873236, guid: e50ca1cf9badd2d48bc9df15ef991072, type: 3}
-    weight: 25
-  - item: {fileID: 6435389368857096447, guid: 7c0d6b3bc6e19ef40b4fc0a6bd7884fc, type: 3}
-    weight: 20
-  - item: {fileID: 2680089431640477406, guid: 7321c695b7d7f5149888c77a9becdb98, type: 3}
-    weight: 10
-  - item: {fileID: 5827078708291273967, guid: d8b2ca2b047ff2c4797ba539cefd61c8, type: 3}
-    weight: 20
-  - item: {fileID: 6498714553113649644, guid: 5c243f07be03384418e0a7c5687cf8a8, type: 3}
+  - item: {fileID: 8870645950855196918, guid: 51c3345f56bd64b4ca7e9c5ae142764f, type: 3}
     weight: 1
   possibleBuildingsBackground:
   - item: {fileID: 5827078708291273967, guid: 29716cfffdf0ee347acddbbbe4a014de, type: 3}
@@ -198,8 +184,8 @@ MonoBehaviour:
   foregroundBuildingHeight: {fileID: 2400019940116809192}
   backgroundBuildingHeight: {fileID: 6436218714342078995}
   foregroundBuildingAmount:
-    min: 3
-    max: 14
+    min: 1
+    max: 1
   backgroundBuildingsAmount:
-    min: 5
-    max: 12
+    min: 0
+    max: 0

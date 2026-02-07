@@ -153,6 +153,6 @@ MonoBehaviour:
   explosion: {fileID: 288178582856079442, guid: 72064ecbb7a94af49a0375fadd7fb9e7, type: 3}
   moneyValue: 100
   velocityLoss: 5
-  friction: 0.7485
-  explosionBoost: 20
+  friction: 1
+  explosionBoost: 100
   buildingType: 0
