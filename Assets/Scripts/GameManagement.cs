@@ -200,7 +200,7 @@ public class GameManagement : MonoBehaviour
     public void OilUpgrade(int currentLevel)
     {
         PirateShipTest.Instance.RemoveFrictionSource(PirateShipTest.Instance.gameObject);
-        if (0.999f + (oilPercent + currentLevel) < 1)
+        if (0.999f + (oilPercent * currentLevel) < 1)
         {
             PirateShipTest.Instance.AddFrictionSource(PirateShipTest.Instance.gameObject, 0.999f + (oilPercent * currentLevel));
         }

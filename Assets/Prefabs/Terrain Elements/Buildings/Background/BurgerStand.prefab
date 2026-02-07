@@ -109,7 +109,7 @@ MonoBehaviour:
   moneyValue: 33
   velocityLoss: 3
   friction: 1
-  explosionBoost: 150
+  explosionBoost: 20
   buildingType: 1
 --- !u!61 &8091127984574883213
 BoxCollider2D:

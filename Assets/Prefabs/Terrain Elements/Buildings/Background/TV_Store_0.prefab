@@ -178,7 +178,7 @@ MonoBehaviour:
   moneyValue: 350
   velocityLoss: 10
   friction: 1
-  explosionBoost: 100
+  explosionBoost: 20
   buildingType: 1
 --- !u!82 &1574269327152064638
 AudioSource:

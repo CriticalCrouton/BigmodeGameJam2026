@@ -1101,7 +1101,7 @@ Transform:
   m_GameObject: {fileID: 451169962}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2990, y: -0.30516, z: 0}
+  m_LocalPosition: {x: 500, y: -3.5, z: 0}
   m_LocalScale: {x: 0.69064, y: 0.69064, z: 0.69064}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4289,7 +4289,7 @@ MonoBehaviour:
   - {fileID: 6435389368857096447, guid: aad559b7cda11bf43b51ccafb62bf362, type: 3}
   cannonFireScript: {fileID: 671479402}
   sailPercent: 1.33
-  oilPercent: 0.005
+  oilPercent: 0.002
   startingBallBonus: 2
   cashBonus: 200
   shipPercent: 1.002
@@ -5515,7 +5515,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073a9835feedff441b906471e8763869, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PirateShipTest
-  startingVelocity: 200
+  startingVelocity: 75
 --- !u!50 &2016495177
 Rigidbody2D:
   serializedVersion: 5

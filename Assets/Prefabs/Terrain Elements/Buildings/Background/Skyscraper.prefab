@@ -154,5 +154,5 @@ MonoBehaviour:
   moneyValue: 100
   velocityLoss: 5
   friction: 1
-  explosionBoost: 100
+  explosionBoost: 20
   buildingType: 0

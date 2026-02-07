@@ -67,7 +67,7 @@ public class PirateShipTest : MonoBehaviour
         launched = false;
 
         rb = GetComponent<Rigidbody2D>();
-        frictionSources.Add(gameObject, 0.999f); //Base friction
+        frictionSources.Add(gameObject, 0.9997f); //Base friction
     }
 
     // Update is called once per frame
