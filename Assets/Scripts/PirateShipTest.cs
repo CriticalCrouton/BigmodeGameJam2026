@@ -108,14 +108,14 @@ public class PirateShipTest : MonoBehaviour
             }
         }
 
-        
-
         //set rotation based on velocity
         float angle = Mathf.Clamp(velocityX / 10f, 0, 15);
         //lerp rotation for smoothness
         transform.rotation = Quaternion.Lerp(transform.rotation, Quaternion.Euler(0, 0, angle), 0.1f);
 
         sinBounce += 5 * Time.deltaTime; //Multiplying value by Time makes the sin bounce faster.
+
+        money += (int)velocityX / 100;
     }
 
     void FixedUpdate()

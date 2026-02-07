@@ -96,6 +96,11 @@ public class GameManagement : MonoBehaviour
 
     private void Start()
     {
+        //Resets the song 
+        foreach (Building b in buildingPrefabs)
+        {
+            b.Friction = 0.99f;
+        }
         state = GameState.Prerun;
         playerVisual = PirateShipTest.Instance.GetComponent<SpriteRenderer>();
 
@@ -160,8 +165,6 @@ public class GameManagement : MonoBehaviour
     //When the button is clicked, the game will restart.
     public void Restart()
     {
-
-
         //Resets the pirate ship to it's starting position.
         PirateShipTest.Instance.gameObject.transform.position = new Vector3(-2.54f, -3.05f, -3);
         MapGenerator.Instance.Reset();
@@ -173,13 +176,6 @@ public class GameManagement : MonoBehaviour
         cannons.ResetCannons();
 
         state = GameState.Prerun;
-
-        /* Unnecessary right now
-        foreach (GameObject destructible in destructibles)
-        {
-            //destructible.Explosion.enabled = false;
-        }
-        */
     }
 
     public void GoToShop()
@@ -198,13 +194,13 @@ public class GameManagement : MonoBehaviour
     }
     public void OilUpgrade()
     {
-        //pirateShip.shipFriction *= oilPercent;
+        PirateShipTest.Instance.AddFrictionSource(PirateShipTest.Instance.gameObject, 1.0001f);
     }
     public void CannonballUpgrade()
     {
         foreach(Building b in buildingPrefabs)
         {
-            b.MoneyValue += cashBonus;
+            b.BackgroundCashBonus += cashBonus;
         }
     }
     public void CannonUpgrade()
@@ -215,8 +211,8 @@ public class GameManagement : MonoBehaviour
     {
         foreach (Building b in buildingPrefabs)
         {
-            b.MoneyValue += cashBonus;
-            b.VelocityLoss *= shipPercent;
+            b.ForegroundCashBonus += cashBonus;
+            b.FrictionMultiplier += 0.002f;
         }
     }
 }

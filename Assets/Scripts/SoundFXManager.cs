@@ -5,6 +5,8 @@ public class SoundFXManager : MonoBehaviour
 
     [SerializeField]
     AudioClip[] crashSounds, upgradeSounds;
+    [SerializeField]
+    AudioClip cannonSound, chainSound, wallCrash, failedPurchaseSound;
     //Other sound effects will go here
 
     [SerializeField]
@@ -13,7 +15,12 @@ public class SoundFXManager : MonoBehaviour
     public static SoundFXManager Instance { get; private set; }
     public AudioClip[] CrashSounds { get { return crashSounds; } }
     public AudioClip[] UpgradeSounds { get { return upgradeSounds; } }
-    public AudioSource Source { get { return source; } set { source = value; } }
+    public AudioClip CannonSound { get { return cannonSound; } }
+    public AudioClip ChainSound { get { return chainSound; } }
+    public AudioClip WallCrash { get { return wallCrash; } }
+    public AudioClip FailedPurchaseSound { get { return failedPurchaseSound; } }
+    public AudioSource Source { get { return source; } }
+
     private void Awake()
     {
         if (Instance != null && Instance != this)

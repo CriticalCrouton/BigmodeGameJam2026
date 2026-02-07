@@ -168,5 +168,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4c4d657349c109946bc1c216aa5275a4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Cannonball
-  velocity: 10
-  type: 1
+  velocity: 88
+  type: 0

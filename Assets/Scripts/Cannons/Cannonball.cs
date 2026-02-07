@@ -10,7 +10,7 @@ public enum CannonballType
 
 public class Cannonball : MonoBehaviour
 {
-    [SerializeField] private float velocity = 300f; //How fast the cannonball is moving
+    [SerializeField] private float velocity = 3000f; //How fast the cannonball is moving
     private CircleCollider2D hitbox; //The collider for the cannonball.
 
     private float elapsedTime; //Cannonballs destroy themselves after five seconds.

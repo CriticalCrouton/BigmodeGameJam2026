@@ -30,7 +30,7 @@ public class CannonFire : MonoBehaviour
 
     private int cannonballs; //The number of cannonballs you have.
 
-    public float reloadTime = 3.0f; //Time it takes to reload a cannonball
+    public float reloadTime; //Time it takes to reload a cannonball
 
     //Properties
     public int StartingCannonballs { get { return startingCannonballs; } set { startingCannonballs = value; } }
@@ -87,7 +87,7 @@ public class CannonFire : MonoBehaviour
             if (inputDirection != Vector2.zero)
             {
                 cannonballs--;
-
+                SoundFXManager.Instance.Source.PlayOneShot(SoundFXManager.Instance.CannonSound, 1);
                 Vector3 pos = gameObject.transform.position + (Vector3)inputDirection * fireOffset;
                 GameObject fire = Instantiate(cannonballFireAnimation, pos, Quaternion.LookRotation(Vector3.forward, inputDirection));
                 fire.transform.SetParent(parentTarget.transform);

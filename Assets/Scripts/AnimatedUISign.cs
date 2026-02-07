@@ -22,12 +22,14 @@ public class AnimatedUISign : MonoBehaviour
             animator.SetBool("ShopOpen", true);
             switchUp = true;
             switchDown = false;
+            SoundFXManager.Instance.Source.PlayOneShot(SoundFXManager.Instance.ChainSound, 1);
         }
         if (GameManagement.Instance.GameState == GameState.Prerun && switchDown == false)
         {
             animator.SetBool("ShopOpen", false);
             switchDown = true;
             switchUp = false;
+            SoundFXManager.Instance.Source.PlayOneShot(SoundFXManager.Instance.ChainSound, 1);
         }
     }
 }

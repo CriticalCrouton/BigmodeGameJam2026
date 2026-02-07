@@ -172,7 +172,9 @@ MonoBehaviour:
     weight: 10
   - item: {fileID: 6498714553113649644, guid: 5c243f07be03384418e0a7c5687cf8a8, type: 3}
     weight: 100
-  possibleBuildingsBackground: []
+  possibleBuildingsBackground:
+  - item: {fileID: 6435389368857096447, guid: aad559b7cda11bf43b51ccafb62bf362, type: 3}
+    weight: 10
   foregroundBuildingHeight: {fileID: 2400019940116809192}
   backgroundBuildingHeight: {fileID: 6436218714342078995}
   foregroundBuildingAmount:

@@ -25,12 +25,26 @@ public class Building : MonoBehaviour
 
     [SerializeField] protected BuildingType buildingType;
 
+    private int  foregroundCashBonus;
+    private int backgroundCashBonus;
+    private float frictionMultiplier;
+
     private bool currentlyColliding = false;
 
     //Properties
     public int MoneyValue { get { return moneyValue; } set { moneyValue = value; } }
     public float VelocityLoss { get { return velocityLoss; } set { velocityLoss = value; } }
-    
+    public float Friction { get { return friction; } set { friction = value; } }
+    public int ForegroundCashBonus { get { return foregroundCashBonus; } set { foregroundCashBonus = value; } }
+    public int BackgroundCashBonus { get { return backgroundCashBonus; } set { backgroundCashBonus = value; } }
+    public float FrictionMultiplier { get { return frictionMultiplier; } set { frictionMultiplier = value; } }
+
+    private void Start()
+    {
+        foregroundCashBonus = 0;
+        backgroundCashBonus = 0;
+        frictionMultiplier = 1;
+    }
     //The money, slowdown, and slow-motion effect happen when you ENTER the building
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -89,7 +103,7 @@ public class Building : MonoBehaviour
             if (collision.gameObject.layer == LayerMask.NameToLayer("Cannonball"))
             {
                 Instantiate(explosion, gameObject.transform.position, gameObject.transform.rotation);
-                PirateShipTest.Instance.Money += moneyValue;
+                PirateShipTest.Instance.Money += moneyValue + backgroundCashBonus;
                 PirateShipTest.Instance.Velocity += explosionBoost;
             }
         }
@@ -112,8 +126,8 @@ public class Building : MonoBehaviour
             {
                 Time.timeScale = 0.5f;
                 Time.fixedDeltaTime = 0.02f * Time.timeScale;
-                PirateShipTest.Instance.AddFrictionSource(gameObject, friction);
-                PirateShipTest.Instance.Money += moneyValue;
+                PirateShipTest.Instance.AddFrictionSource(gameObject, (friction * frictionMultiplier));
+                PirateShipTest.Instance.Money += moneyValue + foregroundCashBonus;
             }
             else
             {

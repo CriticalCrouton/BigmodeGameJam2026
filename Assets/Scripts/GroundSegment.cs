@@ -23,7 +23,7 @@ public class GroundSegment : MonoBehaviour
     {
         //foreground and then background
         SpawnRandomBuildings(foregroundBuildingHeight, possibleBuildingsForeground, UnityEngine.Random.Range(foregroundBuildingAmount.min, foregroundBuildingAmount.max));
-        //SpawnRandomBuildings(backgroundBuildingHeight, possibleBuildingsBackground, UnityEngine.Random.Range(backgroundBuildingsAmount.min, backgroundBuildingsAmount.max));
+        SpawnRandomBuildings(backgroundBuildingHeight, possibleBuildingsBackground, UnityEngine.Random.Range(backgroundBuildingsAmount.min, backgroundBuildingsAmount.max));
 
     }
 

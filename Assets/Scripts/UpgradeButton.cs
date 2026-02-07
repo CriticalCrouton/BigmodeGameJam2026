@@ -54,8 +54,13 @@ public class UpgradeButton : MonoBehaviour
         if (currentUpgrade.LevelUp())
         {
             manager.SailUpgrade();
-            PlaySound();
+            UpgradeSound();
         }
+        else
+        {
+            NotEnoughMoney();
+        }
+        
     }
     public void Oil()
     {
@@ -63,7 +68,11 @@ public class UpgradeButton : MonoBehaviour
         if (currentUpgrade.LevelUp())
         {
             manager.OilUpgrade();
-            PlaySound();
+            UpgradeSound();
+        }
+        else
+        {
+            NotEnoughMoney();
         }
     }
     public void CannonBall()
@@ -72,7 +81,11 @@ public class UpgradeButton : MonoBehaviour
         if (currentUpgrade.LevelUp())
         {
             manager.CannonballUpgrade();
-            PlaySound();
+            UpgradeSound();
+        }
+        else
+        {
+            NotEnoughMoney();
         }
     }
     public void Cannon()
@@ -81,7 +94,11 @@ public class UpgradeButton : MonoBehaviour
         if (currentUpgrade.LevelUp())
         {
             manager.CannonUpgrade();
-            PlaySound();
+            UpgradeSound();
+        }
+        else
+        {
+            NotEnoughMoney();
         }
     }
     public void Ship()
@@ -90,13 +107,22 @@ public class UpgradeButton : MonoBehaviour
         if (currentUpgrade.LevelUp())
         {
             manager.ShipUpgrade();
-            PlaySound();
+            UpgradeSound();
+        }
+        else
+        {
+            NotEnoughMoney();
         }
     }
 
-    private void PlaySound()
+    private void UpgradeSound()
     {
         SoundFXManager.Instance.Source.PlayOneShot(SoundFXManager.Instance.UpgradeSounds[currentUpgrade.Level - 1], 1);
+    }
+
+    private void NotEnoughMoney()
+    {
+        SoundFXManager.Instance.Source.PlayOneShot(SoundFXManager.Instance.FailedPurchaseSound, 1);
     }
     
 }
