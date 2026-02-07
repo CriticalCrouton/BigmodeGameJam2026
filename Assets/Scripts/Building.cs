@@ -107,6 +107,7 @@ public class Building : MonoBehaviour
                 PirateShipTest.Instance.Velocity += explosionBoost;
             }
         }
+        /*
         else
         {
             if (collision.gameObject.layer == LayerMask.NameToLayer("PirateShip"))
@@ -114,6 +115,7 @@ public class Building : MonoBehaviour
                 Time.timeScale = 1f;
             }
         }
+        */
 
 
     }

@@ -192,9 +192,17 @@ public class GameManagement : MonoBehaviour
     {
         PirateShipTest.Instance.StartingVelocity *= sailPercent;
     }
-    public void OilUpgrade()
+    public void OilUpgrade(int currentLevel)
     {
-        PirateShipTest.Instance.AddFrictionSource(PirateShipTest.Instance.gameObject, 1.0001f);
+        PirateShipTest.Instance.RemoveFrictionSource(PirateShipTest.Instance.gameObject);
+        if (0.999f + (oilPercent + currentLevel) < 1)
+        {
+            PirateShipTest.Instance.AddFrictionSource(PirateShipTest.Instance.gameObject, 0.999f + (oilPercent * currentLevel));
+        }
+        else
+        {
+            PirateShipTest.Instance.AddFrictionSource(PirateShipTest.Instance.gameObject, 0.999999f);
+        }
     }
     public void CannonballUpgrade()
     {

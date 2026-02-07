@@ -67,7 +67,7 @@ public class UpgradeButton : MonoBehaviour
         Debug.Log(currentUpgrade.Name);
         if (currentUpgrade.LevelUp())
         {
-            manager.OilUpgrade();
+            manager.OilUpgrade(currentUpgrade.Level);
             UpgradeSound();
         }
         else
