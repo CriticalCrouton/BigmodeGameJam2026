@@ -5962,7 +5962,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 073a9835feedff441b906471e8763869, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PirateShipTest
-  startingVelocity: 180
+  startingVelocity: 60
 --- !u!50 &2016495177
 Rigidbody2D:
   serializedVersion: 5
